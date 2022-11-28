@@ -1,7 +1,9 @@
 :root {
     --main-color: #EAEBEA;
+    --text-color: #000000;
     --btn-primary-color: #000000;
     --btn-border-color: #000000;
+    --font: sans-serif;
 }
 
 * {
@@ -9,14 +11,37 @@
     padding: 0;
     box-sizing: border-box;
 }
-.container{
-    margin: 10px;
+body {
+    font-family: var(--font);
 }
+
 /* =====NAV BAR====== */
 .nav_bar{
+    background: #fff;
+    box-shadow: 0 2px 5px #b5b4b4;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    position:sticky;
+    top: 0;
+    margin-bottom: 20px;
+    padding: 5px 50px;
 }
 .nav_left img{
-    width: 200px;
+    width: 150px;
 }
+.nav_right ul{
+    display: flex;
+    list-style: none;
+}
+.nav_right ul li a{
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 50px;
+    color: var(--text-color);
+}
+.nav_right ul li a:hover{
+    border-bottom: 4px solid #5c5c59;
+    /* color: #e7dcdc; */
+}
+
