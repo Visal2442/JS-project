@@ -4,6 +4,7 @@
     --btn-primary-color: #000000;
     --btn-border-color: #000000;
     --font: sans-serif;
+    --main-padding: 5px 50px;
 }
 
 * {
@@ -42,6 +43,48 @@ body {
 }
 .nav_right ul li a:hover{
     border-bottom: 4px solid #5c5c59;
-    /* color: #e7dcdc; */
 }
+
+/* ====== SLIDE SHOW 1===== */
+
+/* .slide1_container img{
+    width: 100%;
+} */
+
+
+/* ====== SLIDE SHOW 2 & 3===== */
+.slide2_container .slide_top{
+    display: flex;
+    justify-content: space-between;
+    padding: var(--main-padding);
+    font-weight: bold;
+}
+
+.card_container{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: relative;
+}
+.card{
+    background: #5c5c59;
+    width: 50%;
+}
+/* .card_img img{
+} */
+
+.previous,
+.next{
+    position: absolute;
+    top: 35%;
+}
+.previous{
+    left: 1%;
+}
+.next{
+    right: 1%;
+}
+
+
+
 
