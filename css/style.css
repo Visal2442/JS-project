@@ -1,0 +1,22 @@
+:root {
+    --main-color: #EAEBEA;
+    --btn-primary-color: #000000;
+    --btn-border-color: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    margin: 10px;
+}
+/* =====NAV BAR====== */
+.nav_bar{
+    display: flex;
+    justify-content: space-between;
+}
+.nav_left img{
+    width: 200px;
+}
