@@ -1,5 +1,6 @@
 
 const tbody=document.querySelector("tbody");
+const dialog_container=document.querySelector(".dialog_container");
 
 // ========== Variable=====
 let all_products=[
@@ -59,7 +60,16 @@ let loadStorge=()=>{
     }
 }
 
+// ====== Hide function=====
+let hide=(element)=>{
+    element.style.display="none";
+}
+// ====== Show function =====
+let show=(element)=>{
+    element.style.display="block";
+}
 
+// =========== Display product for seller =======
 let displaySellerProduct=()=>{
     for(let index in all_products){
         let tr=document.createElement("tr");
@@ -106,8 +116,17 @@ let displaySellerProduct=()=>{
         tr.append(td1, td2, td3, td4);
         tbody.appendChild(tr);
     }
-
 }
+
+// ========= Onadd product =====
+let onAdd=()=>{
+    show(dialog_container);
+}
+// ======= Cancel function ======
+let cancel=()=>{
+    hide(dialog_container);
+}
+
 
 
 

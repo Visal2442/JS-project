@@ -256,6 +256,7 @@ th{
 
 /* ===== dialog ====== */
 .dialog_container{
+    display: none;
     margin-bottom: 100px;
 }
 dialog{
