@@ -7,7 +7,7 @@ let images=["img1.jpg", "img-1.jpg"];
 let countImg=0;
 
 let slideShow=()=>{
-    let image="img/slideShow/";
+    let image="img/";
     image+=images[countImg];
     img.src=image;
     img.style.transform="translateX(-180deg)";

@@ -17,7 +17,7 @@
             <div class="nav_right">
                 <ul>
                     <li><a href="../../index.html">HOME</a></li>
-                    <li><a href="html/store/store.html">STORE</a></li>
+                    <li><a href="store.html">STORE</a></li>
                     <li><a href="html/seller/seller.html">SELLER</a></li>
                     <li><a href="html/cart/cart.html">CART</a></li>
                     <li><a href="html/login/login.html">LOGIN</a></li>
@@ -42,14 +42,14 @@
                 <option value="500">$500</option>
             </select>
             <div class="search_input">
-                <input type="search" name="search" id="search" placeholder="Search your product here..">
+                <input type="search" name="search" id="search" onkeyup="search()" placeholder="Search your product here..">
             </div>
         </div>
 
         <div class="card_container">
             <div class="card">
                 <div class="card_img">
-                    <img src="../../img/slideShow/blackJacket.jpg" alt="Black">
+                    <img src="../../img/blackJacket.jpg" alt="Black">
                 </div>
                 <div class="card_footer">
                     <div class="card_title">
@@ -72,11 +72,34 @@
 
             <div class="card">
                 <div class="card_img">
-                    <img src="../../img/slideShow/brownJacket.png" alt="Brown">
+                    <img src="../../img/airmax.png" alt="Brown">
                 </div>
                 <div class="card_footer">
                     <div class="card_title">
                         <p class="title">Flannel Lined Jacket</p>
+                        <p id="price">$70</p>
+                    </div>
+                    <div class="card_rate">
+                        <span>&#9734;</span>
+                        <span>&#9734;</span>
+                        <span>&#9734;</span>
+                        <span>&#9734;</span>
+                        <span>&#9734;</span>
+                    </div>`
+                    <div class="card_button">
+                        <button type="button">Detail</button>
+                        <button type="button">Add cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card_img">
+                    <img src="../../img/colorful.png" alt="Brown">
+                </div>
+                <div class="card_footer">
+                    <div class="card_title">
+                        <p class="title">Colorful Jacket</p>
                         <p id="price">$70</p>
                     </div>
                     <div class="card_rate">
@@ -95,34 +118,11 @@
 
             <div class="card">
                 <div class="card_img">
-                    <img src="../../img/slideShow/brownJacket.png" alt="Brown">
+                    <img src="../../img/brownJacket.png" alt="Black">
                 </div>
                 <div class="card_footer">
                     <div class="card_title">
                         <p class="title">Flannel Lined Jacket</p>
-                        <p id="price">$70</p>
-                    </div>
-                    <div class="card_rate">
-                        <span>&#9734;</span>
-                        <span>&#9734;</span>
-                        <span>&#9734;</span>
-                        <span>&#9734;</span>
-                        <span>&#9734;</span>
-                    </div>
-                    <div class="card_button">
-                        <button type="button">Detail</button>
-                        <button type="button">Add cart</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card_img">
-                    <img src="../../img/slideShow/blackJacket.jpg" alt="Black">
-                </div>
-                <div class="card_footer">
-                    <div class="card_title">
-                        <p class="title">Glennaker Rain Jacket</p>
                         <p id="price">$30</p>
                     </div>
                     <div class="card_rate">
