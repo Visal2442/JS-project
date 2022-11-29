@@ -94,6 +94,7 @@ body {
 }
 .card_img img{
     width: 350px;
+    height: 300px;
     border-radius: 20px;
 }
 .card_title{
