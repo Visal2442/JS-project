@@ -1,9 +1,6 @@
 
 const tbody=document.querySelector("tbody");
 
-
-
-
 // ========== Variable=====
 let all_products=[
     {   url:"http://127.0.0.1:49344/img/blackJacket.jpg",

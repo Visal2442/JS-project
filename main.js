@@ -175,7 +175,6 @@ let showDetail=(event)=>{
      btn_cart.textContent="Add Cart";
      btn_detail.append(btn_buy, btn_cart);
      img_detail.appendChild(btn_detail);
-     console.log(btn_detail);
  
      // append all child to product_details
      product_detail.append(div_img, img_detail);
