@@ -155,6 +155,7 @@ section{
     padding: 10px 20px;
 }
 
+
             /* ==========Store page========== */
 .search_container{
     display: flex;
@@ -179,6 +180,21 @@ input[type="search"]{
     border: 1px solid #000;
 }
 
+.detail{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: var(--main-padding);
+}
+.img_detail{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;  
+}
+.btn_detail{    
+    justify-content:flex-start;
+    gap: 10px;
+}
 
 
 
