@@ -186,11 +186,12 @@ input[type="search"]{
     align-items: center;
     gap: 10px;
     padding: var(--main-padding);
+    margin-bottom: 20px;
 }
 .img_detail{
     display: flex;
     flex-direction: column;
-    gap: 10px;  
+    gap: 15px;  
 }
 .btn_detail{    
     justify-content:flex-start;
@@ -198,19 +199,7 @@ input[type="search"]{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* ======= Footer ====== */
 footer{
     background: var(--main-color);
     display: flex;
