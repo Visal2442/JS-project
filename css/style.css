@@ -64,9 +64,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--main-padding);
     font-weight: bold;
     margin-top: 20px;
+    padding: var(--main-padding);
+}
+.slide2_container .slide_top p{
+    cursor: pointer;
 }
 
 .card_container{
@@ -149,6 +152,28 @@ section{
 .section button{
     padding: 10px 20px;
 }
+
+
+footer{
+    background: var(--main-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;   
+}
+.more{
+    display: flex;
+    flex-direction: column;
+    gap: 10px ;
+}
+.more p a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+.social_madia i{
+    font-size:x-large;
+    margin-right: 3px;
+}
+
 
 
 
