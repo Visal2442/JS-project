@@ -1,8 +1,10 @@
 :root {
     --main-color: #EAEBEA;
     --text-color: #000000;
-    --btn-primary-color: #000000;
+    --btn-delete-bg: red;
+    --btn-primary-bg: #000000;
     --btn-border-color: #000000;
+    --btn-padding: 10px 30px;
     --font: sans-serif;
     --main-padding: 5px 50px;
 }
@@ -111,16 +113,16 @@ body {
 }
 .card_button button{
     border-radius: 20px;
-    padding: 10px 30px;
+    padding: var(--btn-padding);
     z-index: 1;
     cursor: pointer;
 }
 .card_button button:first-child{
-    border: 1px solid var(--btn-border-color);
+    border: 1px solid var(--btn-border-color);  
 }
 .card_button button:last-child{
     border: none;
-    background: var(--btn-primary-color);
+    background: var(--btn-primary-bg);
     color: white;
 }
 
@@ -156,7 +158,7 @@ section{
     margin-top: 10px;
 }
 .section button{
-    padding: 10px 20px;
+    padding: var(--btn-padding);
 }
 
 
@@ -203,6 +205,49 @@ input[type="search"]{
     justify-content:flex-start;
     gap: 10px;
 }
+
+
+/* ================= SELLER PAGE============ */
+.product_container h1{
+    text-align: center;
+    font-size: 3rem;
+    margin-top:50px;
+}
+
+table{
+    width: 80%;
+    margin: 20px auto;
+}
+table, th, td{
+    border: 1px solid var(--btn-border-color);
+    border-collapse: collapse;
+}
+th, td{
+    padding: 10px;
+}
+th{
+    font-size: larger;
+}
+.name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.name img{
+    width: 100px;
+}
+.action .delete{
+    background: var(--btn-delete-bg);
+}
+.add{
+    justify-content: flex-end;
+}
+.add button{
+    margin-right: 10%;
+    padding: var(--btn-padding);
+}
+
+
 
 
 /* ======= Footer ====== */
