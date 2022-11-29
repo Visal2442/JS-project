@@ -33,6 +33,14 @@ let slide1_product=
                     star: 5,
                     size: "XL",
                     description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
+                },
+                {
+                    url:"https://m.media-amazon.com/images/I/61K4+FO8lDL._AC_UX679_.jpg",
+                    title:"Colorful Jacket",
+                    price:70,
+                    star: 5,
+                    size: "XL",
+                    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
                 }
                 ]
 

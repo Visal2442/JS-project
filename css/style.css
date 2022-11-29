@@ -16,6 +16,9 @@ body {
     font-family: var(--font);
 }
 
+.active{
+    border-bottom: 4px solid #5c5c59;
+}
                 /* ========== Home page======= */
 /* =====NAV BAR====== */
 .nav_bar{
@@ -108,7 +111,7 @@ body {
 }
 .card_button button{
     border-radius: 20px;
-    padding: 10px 20px;
+    padding: 10px 30px;
     z-index: 1;
     cursor: pointer;
 }
@@ -157,7 +160,7 @@ section{
 }
 
 
-            /* ==========Store page========== */
+            /* ========== Store page========== */
 .search_container{
     display: flex;
     margin-top: 20px;
@@ -187,6 +190,9 @@ input[type="search"]{
     gap: 10px;
     padding: var(--main-padding);
     margin-bottom: 20px;
+}
+.img img{
+    width: 400px;
 }
 .img_detail{
     display: flex;
