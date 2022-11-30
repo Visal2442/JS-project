@@ -19,6 +19,10 @@
 body {
     font-family: var(--font);
 }
+a{
+    text-decoration: none;
+    color:var(--text-color);
+}
 
 .active{
     border-bottom: 4px solid #5c5c59;
@@ -34,7 +38,6 @@ body {
     position:sticky;
     top: 0;
     z-index: 2;
-    margin-bottom: 20px;
     padding: 5px 50px;
 }
 .nav_left img{
@@ -56,8 +59,8 @@ body {
 
 /* ====== SLIDE SHOW 1===== */
 .slide1_container{
-    width: 90%;
-    margin: auto;
+    width: 100%;
+    /* margin: auto; */
 }
 .slide1_container img{
     width: 100%;
@@ -355,8 +358,8 @@ thead{
     margin-top: 40px;
     gap: 10px;
 }
-.btn_buy button:last-child a{
-    text-decoration: none;
+.btn_buy button a{
+    color: #ffffff;
 }
 
 .btn_delete_cart button:last-child{

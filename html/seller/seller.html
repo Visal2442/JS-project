@@ -106,6 +106,50 @@
             </dialog>
         </div>
 
+        <!-- ======= Dialog Edit ===== -->
+        <div class="dialog_container dialog_edit">
+            <dialog open>
+                <div class="product_name input">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name2" placeholder="Product Name... (only 25 characters or lower than that)" maxlength="25">
+                </div> 
+                <div class="more_info input">
+                    <label for="more_info">Description</label>
+                    <textarea name="more_info" id="more_info2" cols="25" rows="5" placeholder="More detail"></textarea>
+                </div>
+                <div class="product_price input">
+                    <label for="price">Price</label>
+                    <input type="number" name="price" id="price2" min="1" placeholder="Your price ...">
+                </div>
+                <div class="currency input">
+                    <label for="currency">Currency</label>
+                    <select name="currency" id="currency2">
+                        <option disabled selected>Choose your currency ...</option>
+                        <option value="dollar">Dollar</option>
+                        <option value="pound">Pound</option>
+                    </select>
+                </div>
+                <div class="product_img input">
+                    <label for="image">Image</label>
+                    <input type="text" name="image" id="image2" placeholder="Image URL ...( image can be only width 300px and height 300px or lower than that )">
+                </div>
+                <div class="input">
+                    <label for="size">Size</label>
+                    <select name="size" id="size2">
+                        <option disabled selected>Size</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                    </select>
+                </div>
+                <div class="card_button btn_dialog">
+                    <button type="button" onclick="cancel()">Cancel</button>
+                    <button type="button" onclick="editProduct()">Update</button>
+                </div>
+            </dialog>
+        </div>
+
     </div>
     
 </body>

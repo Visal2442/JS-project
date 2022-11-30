@@ -1,6 +1,7 @@
 // ========= DOM HTML ========
 const table=document.querySelector("table");
 const dialog_container=document.querySelector(".dialog_container");
+const dialog_edit=document.querySelector(".dialog_edit");
 const name_product=document.querySelector("#name");
 const price_product=document.querySelector("#price");
 const currency=document.querySelector("#currency");
@@ -138,6 +139,7 @@ let onAdd=()=>{
 // ======= Cancel function ======
 let cancel=()=>{
     hide(dialog_container);
+    hide(dialog_edit)
 }
 
 // ======= Add product =======
@@ -189,10 +191,41 @@ let addProduct = ()=>{
     }
 }
 
-let edit=()=>{
-    onAdd();
-
+// ======= Edit product ========
+let edit = (event)=>{
+    let index=event.target.parentElement.parentElement.parentElement.dataset.index;
+    let btn=event.target.textContent;
+    console.log(btn);
+    console.log(index);
+    
+    document.querySelector("#name2").value=all_products[index].title;
+    document.querySelector("#more_info2").value=all_products[index].description;
+    document.querySelector("#price2").value=all_products[index].price;
+    document.querySelector("#image2").value=all_products[index].url;
+    document.querySelector("#size2").value=all_products[index].size;
+    
+    all_products.splice(index, 1);
+    show(dialog_edit);
+    console.log("me")
 }
+
+let editProduct = (event)=>{
+    let index=event.target;
+    let newEdit={};
+    console.log(index);
+
+    newEdit.url=document.querySelector("#image2").value;
+    newEdit.title=document.querySelector("#name2").value;
+    newEdit.price= document.querySelector("#price2").value;
+    newEdit.star=5;
+    newEdit.size= document.querySelector("#size2").value;
+    newEdit.description=document.querySelector("#more_info2").value;
+    all_products.splice(index, 0, newEdit);
+    saveData();
+    hide(dialog_edit)
+}
+
+
 
 // ======== Delete product ========
 let deleteProduct=(event)=>{

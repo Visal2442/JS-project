@@ -33,14 +33,17 @@
 
         <!-- ======= Search====== -->
         <div class="search_container">
-            <select name="price" id="price">
-                <option>Sort by price</option>
-                <option value="10">$10</option>
-                <option value="30">$30</option>
-                <option value="50">$50</option>
-                <option value="100">$100</option>
-                <option value="200">$200</option>
-                <option value="500">$500</option>
+            <select name="price" id="price" onchange="sort()">
+                <option disabled selected>Sort by price</option>
+                <option value="all">All products</option>
+                <option value="$10">$10</option>
+                <option value="$30">$30</option>
+                <option value="$50">$50</option>
+                <option value="$100">$100</option>
+                <option value="$200">$200</option>
+                <option value="$500">$500</option>
+                <option value="$1000">$1000</option>
+                <option value="$2000">$2000</option>
             </select>
             <div class="search_input">
                 <input type="search" name="search" id="search" onkeyup="search()" placeholder="Search your product here..">

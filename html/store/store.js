@@ -77,7 +77,6 @@ let loadStorge=()=>{
 }
 
 
-
 // ======= Display products=======
 let dispalyProduct=()=>{
 
@@ -163,13 +162,14 @@ let slideShow=()=>{
 
 
 // ======= Search function=====
-let search=()=>{
+let search=(price)=>{
     let input=document.querySelector("#search").value.toLowerCase();
     let cards=document.querySelectorAll(".card");
     for(let i=0; i<cards.length; i++){
         let card_footer=cards[i].lastElementChild;
         let card_title=card_footer.firstElementChild;
         let title = card_title.firstElementChild.textContent.toLowerCase();
+        console.log(price);
         if(title.indexOf(input)> -1){
             cards[i].style.display="";
         }
@@ -210,6 +210,7 @@ let showDetail=(event)=>{
     // create img_details
     let img_detail=document.createElement("div");
     img_detail.className="img_detail";
+
     // create h1
     let h1=document.createElement("h1");
     h1.textContent=all_products[index].title;
@@ -222,7 +223,6 @@ let showDetail=(event)=>{
     for(i=0; i<star;i++){
         let i=document.createElement("i");
         i.className="fa fa-star";   
-        // appendChild to img_rate
         img_rate.appendChild(i);
     }
     img_detail.appendChild(img_rate);
@@ -259,10 +259,12 @@ let showDetail=(event)=>{
     // ==== button detail ======
     let btn_detail=document.createElement("div");
     btn_detail.classList.add("card_button", "btn_detail");
+
     // ======Btn buy =====
     let btn_buy=document.createElement("button");
     btn_buy.type="button";
     btn_buy.textContent="Buy Now";
+
     // ====== Btn add to cart =====
     let btn_cart=document.createElement("button");
     btn_cart.type="button";
@@ -283,6 +285,7 @@ let addCart=(event)=>{
     let index=event.target.parentElement.parentElement.parentElement.dataset.index;
     let event_title=event.target.parentElement.parentElement.firstElementChild.firstElementChild.textContent;
     console.log(typeof(cart)=="object")
+
     // ======= Add to newCart =====
     newCart.url=all_products[index].url;
     newCart.title=all_products[index].title;
