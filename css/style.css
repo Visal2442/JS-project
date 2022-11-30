@@ -2,7 +2,7 @@
     --main-color: #fcfffcd1;
     --bg-footer:#d6d3d3;
     --text-color: #000000;
-    --btn-delete-bg: red;
+    --btn-delete-bg: #e42525;
     --btn-primary-bg: #000000;
     --btn-border-color: #000000;
     --btn-padding: 10px 30px;
@@ -247,8 +247,8 @@ th{
     width: 100px;
     height: 100px;
 }
-.action .delete{
-    background: var(--btn-delete-bg);
+.action button:last-child{
+    background: var(--btn-delete-bg)
 }
 .add{
     justify-content: flex-end;
@@ -257,6 +257,7 @@ th{
     margin: 0 10% 2% 10%;
     padding: var(--btn-padding);
 }
+
 
 /* ===== dialog ====== */
 .dialog_container{
@@ -332,6 +333,9 @@ thead{
 .cart_detail h2{
     margin-bottom: 5px;
 }
+.cart_detail .rate{
+    margin-bottom: 5px;
+}
 
 .total_price{
     width: 20%;
@@ -351,6 +355,11 @@ thead{
     margin-top: 40px;
     gap: 10px;
 }
+.btn_delete_cart button:last-child{
+    background: var(--btn-delete-bg);
+}
+
+
 
 /* ======= Footer ====== */
 footer{

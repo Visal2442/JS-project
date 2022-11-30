@@ -117,7 +117,7 @@ let displaySellerProduct=()=>{
         btn1.textContent="Edit";
         btn1.addEventListener("click", edit);
         let btn2=document.createElement("button");
-        btn2.className="delete";
+        btn2.className="delete seller_delete";
         btn2.type="button";
         btn2.textContent="Delete";
         btn2.addEventListener("click",deleteProduct);
@@ -131,7 +131,7 @@ let displaySellerProduct=()=>{
     table.appendChild(tbody);
 }
 
-// ========= Onadd product =====
+// ========= On Add =====
 let onAdd=()=>{
     show(dialog_container);
 }
@@ -191,7 +191,7 @@ let addProduct = ()=>{
 
 let edit=()=>{
     onAdd();
-    
+
 }
 
 // ======== Delete product ========

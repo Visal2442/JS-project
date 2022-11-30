@@ -9,6 +9,7 @@ const slide1_container=document.querySelector(".slide1_container");
 // ===== Variable====
 let images=["img1.jpg", "img-1.jpg"];
 let count_img=0;
+let cart=[];
 let all_products=[
                 {   url:"http://127.0.0.1:49344/img/blackJacket.jpg",
                     title:"Glennaker Rain Jacket",
@@ -57,15 +58,24 @@ let all_products=[
 
 // =======Local Storge=======
 let saveData=()=>{
-    localStorage.setItem("Products", JSON.stringify(all_products));
+    localStorage.setItem("products", JSON.stringify(all_products));
+}
+
+let saveCart=()=>{
+    localStorage.setItem("cart", JSON.stringify(cart));
 }
 
 let loadStorge=()=>{
     let product_storage=JSON.parse(localStorage.getItem("products"));
-    if(product_storage!=null){
+    let cart_storage=JSON.parse(localStorage.getItem("cart"));
+    if(product_storage!==null){
         all_products=product_storage;
     }
+    if(cart_storage!==null){
+        cart=cart_storage;
+    }
 }
+
 
 
 // ======= Display products=======
@@ -122,6 +132,7 @@ let dispalyProduct=()=>{
         let btn2=document.createElement("button");
         btn2.type="button";
         btn2.textContent="Add cart";
+        btn2.addEventListener("click",addCart);
         // appendChild to card_button
         card_button.append(btn1, btn2);
         // appendChild to card_footer 
@@ -153,8 +164,8 @@ let slideShow=()=>{
 
 // ======= Search function=====
 let search=()=>{
-    let card_container=document.querySelector(".card_container");
     let input=document.querySelector("#search").value.toLowerCase();
+    let card_container=document.querySelector(".card_container");
     let cards=card_container.querySelectorAll(".card");
     for(let i=0; i<cards.length; i++){
         let card_footer=cards[i].lastElementChild;
@@ -257,9 +268,9 @@ let showDetail=(event)=>{
     let btn_cart=document.createElement("button");
     btn_cart.type="button";
     btn_cart.textContent="Add Cart";
+    btn_cart.addEventListener("click",addCart);
     btn_detail.append(btn_buy, btn_cart);
     img_detail.appendChild(btn_detail);
-    console.log(btn_detail);
 
     // append all child to product_details
     product_detail.append(div_img, img_detail);
@@ -267,7 +278,18 @@ let showDetail=(event)=>{
     show(product_detail);
 }
 
+let addCart=(event)=>{
+    let newCart ={};
+    let index=event.target.parentElement.parentElement.parentElement.dataset.index;
 
+    newCart.url=all_products[index].url;
+    newCart.title=all_products[index].title;
+    newCart.price=all_products[index].price;
+    newCart.star=all_products[index].star;
+    newCart.size=all_products[index].size;
+    cart.push(newCart);
+    saveCart();
+}
 
 
 // ======= Function======
