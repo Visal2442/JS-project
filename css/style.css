@@ -303,9 +303,54 @@ label{
 }
 
 
+/* ================================================================ */
+                                /* CART PAGE */
+/* ================================================================ */
+.cart_container {
+    display: flex;
+}
+.cart_container table{
+    background: var(--main-color);
+    width: 70%;
+    border: none;
+    border-radius: var(--main-radius);
+    box-shadow: 0 1px 10px rgb(175, 171, 171);
+}
+thead{
+    border-bottom: 1px solid #000;
+}
+.cart_container table td,
+.cart_container table th{
+    padding: 15px;
+    border: none;
+    text-align: left;
+    font-weight: bold;
+}
+.cart_container table p{
+    font-weight: lighter;
+}
+.cart_detail h2{
+    margin-bottom: 5px;
+}
 
-
-
+.total_price{
+    width: 20%;
+    background: var(--main-color);
+    margin: 20px auto;
+    padding:15px;
+    box-shadow: 0 1px 10px rgb(175, 171, 171);
+    border-radius: var(--main-radius);
+}
+.total p{
+    margin-bottom: 10px;
+    /* text-align: center; */
+}
+.btn_buy{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    gap: 10px;
+}
 
 /* ======= Footer ====== */
 footer{

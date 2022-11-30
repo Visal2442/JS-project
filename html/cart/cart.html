@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- ====NAV BAR====== -->
+        <div class="nav_bar">
+            <div class="nav_left">
+                <img src="../../img/logo.png" alt="Logo">
+            </div>
+            <div class="nav_right">
+                <ul>
+                    <li><a href="../../index.html">HOME</a></li>
+                    <li><a href="../store/store.html">STORE</a></li>
+                    <li><a href="../seller/seller.html">SELLER</a></li>
+                    <li><a href="cart.html" class="active">CART</a></li>
+                    <li><a href="../login/login.html">LOGIN</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="cart_container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quntity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="name cart_name">
+                                <img src="../../img/blackJacket.jpg">
+                                <div class="cart_detail">
+                                    <h2>Black Jacket</h2>
+                                    <p>SIZE: L</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <input type="number" min="1" max="100">
+                        </td>
+                        <td>$10</td>
+                        <td>
+                            <div class="btn_detail card_button btn_delete_cart">
+                                <button type="button" class="delete">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="name cart_name">
+                                <img src="../../img/blackJacket.jpg">
+                                <div class="cart_detail">
+                                    <h2>Black Jacket</h2>
+                                    <p>SIZE: L</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <input type="number" min="1" max="100">
+                        </td>
+                        <td>$10</td>
+                        <td>
+                            <div class="btn_detail card_button btn_delete_cart">
+                                <button type="button" class="delete">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="total_price">
+                <div class="total">
+                    <p>Total price: <b>$600</b></p>
+                    <p>Discount: <b>$0</b></p>
+                </div>
+                <div class="btn_buy card_button">
+                    <button type="button">Buy Now</button>
+                    <button type="button">Continue Shopping</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

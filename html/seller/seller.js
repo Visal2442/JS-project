@@ -115,6 +115,7 @@ let displaySellerProduct=()=>{
         let btn1=document.createElement("button");
         btn1.type="button";
         btn1.textContent="Edit";
+        btn1.addEventListener("click", edit);
         let btn2=document.createElement("button");
         btn2.className="delete";
         btn2.type="button";
@@ -143,6 +144,7 @@ let cancel=()=>{
 let addProduct = ()=>{
     let newProduct={};
     let isTrue=true;
+
     let name_product=document.querySelector("#name");
     let more_info=document.querySelector("#more_info");
     let price_product=document.querySelector("#price");
@@ -150,6 +152,7 @@ let addProduct = ()=>{
     let img_product=document.querySelector("#image");
     let size=document.querySelector("#size");
 
+    // ==== Get value from input =======
     newProduct.url=img_product.value;
     newProduct.title=name_product.value;
     newProduct.price=price_product.value;
@@ -186,7 +189,10 @@ let addProduct = ()=>{
     }
 }
 
-
+let edit=()=>{
+    onAdd();
+    
+}
 
 // ======== Delete product ========
 let deleteProduct=(event)=>{
