@@ -7,7 +7,7 @@ let cart=JSON.parse(localStorage.getItem("cart"));
 
 // ========= Local Storage =======
 let saveCart=()=>{
-    localStorage.setItem("Cart",JSON.stringify(cart));
+    localStorage.setItem("cart",JSON.stringify(cart));
 }
 
 
@@ -16,6 +16,7 @@ let displayCart=()=>{
 
     for(let index in cart){
         let tr= document.createElement("tr");
+        tr.dataset.index=index;
     
         // ====== Create td 1======
         let td1=document.createElement("td");
@@ -35,7 +36,7 @@ let displayCart=()=>{
         let div_rate=document.createElement("div");
         div_rate.className="rate";
         let stars=cart[index].star;
-        for(let star in stars){
+        for(let i=0; i<stars; i++){
             let i=document.createElement("i");
             i.className="fa fa-star";
             div_rate.appendChild(i);
@@ -43,9 +44,9 @@ let displayCart=()=>{
         // ======= Create p =====
         let p=document.createElement("p");
         p.textContent="SIZE: " + cart[index].size;
-        // ======== Appendchild to div cart_detail=====
+        // ====== Appendchild to div cart_detail=====
         cart_detail.append(h2, div_rate, p);
-        // ========= AppendChild to cart_name======
+        // ========= AppendChild to cart_name ======
         cart_name.append(image, cart_detail)
         // ====== Append cart_name to td1====
         td1.appendChild(cart_name);
@@ -73,6 +74,7 @@ let displayCart=()=>{
         button.type="button";
         button.className="delete";
         button.textContent="Delete";
+        button.addEventListener("click", deleteCart);
         div_btn_delete.appendChild(button);
         td4.appendChild(div_btn_delete);
 
@@ -80,6 +82,15 @@ let displayCart=()=>{
         tr.append(td1, td2, td3, td4);
         tbody.appendChild(tr);
     }
+}
+
+
+// ========= Delete cart =======
+let deleteCart=(event)=>{
+    let index=event.target.parentElement.parentElement.parentElement.dataset.index;
+    cart.splice(index,1);
+    saveCart();
+    location.reload();
 }
 
 // ======== Call functions ========

@@ -165,13 +165,12 @@ let slideShow=()=>{
 // ======= Search function=====
 let search=()=>{
     let input=document.querySelector("#search").value.toLowerCase();
-    let card_container=document.querySelector(".card_container");
-    let cards=card_container.querySelectorAll(".card");
+    let cards=document.querySelectorAll(".card");
     for(let i=0; i<cards.length; i++){
         let card_footer=cards[i].lastElementChild;
         let card_title=card_footer.firstElementChild;
         let title = card_title.firstElementChild.textContent.toLowerCase();
-        if(title.indexOf(input)>-1){
+        if(title.indexOf(input)> -1){
             cards[i].style.display="";
         }
         else{
@@ -278,17 +277,29 @@ let showDetail=(event)=>{
     show(product_detail);
 }
 
+// ======= Add product to cart =======
 let addCart=(event)=>{
     let newCart ={};
     let index=event.target.parentElement.parentElement.parentElement.dataset.index;
-
+    let event_title=event.target.parentElement.parentElement.firstElementChild.firstElementChild.textContent;
+    console.log(typeof(cart)=="object")
+    // ======= Add to newCart =====
     newCart.url=all_products[index].url;
     newCart.title=all_products[index].title;
     newCart.price=all_products[index].price;
     newCart.star=all_products[index].star;
     newCart.size=all_products[index].size;
-    cart.push(newCart);
-    saveCart();
+    console.log(typeof(all_products[index].title))
+    if(typeof(cart)=="object"){
+        cart.push(newCart);
+        saveCart();
+        console.log("me")
+    }
+    else if(all_products[index].title!=event_title){
+        cart.push(newCart);
+        saveCart();
+        console.log(cart)
+        }
 }
 
 

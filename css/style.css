@@ -339,6 +339,7 @@ thead{
 
 .total_price{
     width: 20%;
+    height: 30vh;
     background: var(--main-color);
     margin: 20px auto;
     padding:15px;
@@ -347,7 +348,6 @@ thead{
 }
 .total p{
     margin-bottom: 10px;
-    /* text-align: center; */
 }
 .btn_buy{
     display: flex;
@@ -355,6 +355,10 @@ thead{
     margin-top: 40px;
     gap: 10px;
 }
+.btn_buy button:last-child a{
+    text-decoration: none;
+}
+
 .btn_delete_cart button:last-child{
     background: var(--btn-delete-bg);
 }
