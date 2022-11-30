@@ -67,7 +67,7 @@
             <dialog open>
                 <div class="product_name input">
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name" placeholder="Product Name... (only 30 characters or lower than that)" maxlength="30">
+                    <input type="text" name="name" id="name" placeholder="Product Name... (only 25 characters or lower than that)" maxlength="25">
                 </div> 
                 <div class="more_info input">
                     <label for="more_info">Description</label>
@@ -80,6 +80,7 @@
                 <div class="currency input">
                     <label for="currency">Currency</label>
                     <select name="currency" id="currency">
+                        <option disabled selected>Choose your currency ...</option>
                         <option value="dollar">Dollar</option>
                         <option value="pound">Pound</option>
                     </select>
@@ -91,6 +92,7 @@
                 <div class="input">
                     <label for="size">Size</label>
                     <select name="size" id="size">
+                        <option disabled selected>Size</option>
                         <option value="M">M</option>
                         <option value="L">L</option>
                         <option value="XL">XL</option>

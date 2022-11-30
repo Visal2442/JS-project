@@ -141,7 +141,6 @@ let cancel=()=>{
 
 // ======= Add product =======
 let addProduct = ()=>{
-    hide(dialog_container);
     let newProduct={};
     let isTrue=true;
     let name_product=document.querySelector("#name");
@@ -159,9 +158,9 @@ let addProduct = ()=>{
     newProduct.description=more_info.value;
     newProduct.currency=currency.value;
     
-    if(name_product.value.length>30){
+    if(name_product.value.length>30 || name_product.value===""){
         isTrue=false;
-        alert("Your product name is too long");
+        alert("Check your product name");
     }
     if(more_info.value===""){
         isTrue=false;
@@ -171,26 +170,21 @@ let addProduct = ()=>{
         isTrue=false;
         alert("Enter a valid price");
     }
-    if(currency.value!== "dollar" || currency.value!=="pound"){
+    if(currency.value=="Choose your currency ..."){
         isTrue=false;
-        alert("Enter a valid currency");
+        alert("Choose your currency");
     }
-    if(size.value=="L"){
-        alert("YOU")
-    }
-    let img_extension=img_product.value.slice(img_product.value.length-3, img_product.value.length);
-    console.log(img_extension);
-    if(img_extension!=="png" || img_extension!=="jpg" || img_extension!=="gif"){
+    if(img_product.value==""){
         isTrue=false;
-        alert("Enter a valid image format");
+        alert("Please add product image");
     }
     if(isTrue){
-        
+        hide(dialog_container);
+        all_products.push(newProduct);
+        saveData();
+        displaySellerProduct();
     }
 }
-
-
-
 
 
 
