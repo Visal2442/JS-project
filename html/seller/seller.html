@@ -67,7 +67,7 @@
             <dialog open>
                 <div class="product_name input">
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name" placeholder="Product Name">
+                    <input type="text" name="name" id="name" placeholder="Product Name... (only 30 characters or lower than that)" maxlength="30">
                 </div> 
                 <div class="more_info input">
                     <label for="more_info">Description</label>
@@ -75,19 +75,31 @@
                 </div>
                 <div class="product_price input">
                     <label for="price">Price</label>
-                    <input type="number" name="price" id="price">
+                    <input type="number" name="price" id="price" min="1" placeholder="Your price ...">
                 </div>
                 <div class="currency input">
                     <label for="currency">Currency</label>
-                    <input type="text" name="currency" id="currency" placeholder="Only dollar currency ...">
+                    <select name="currency" id="currency">
+                        <option value="dollar">Dollar</option>
+                        <option value="pound">Pound</option>
+                    </select>
                 </div>
                 <div class="product_img input">
                     <label for="image">Image</label>
-                    <input type="text" name="image" id="image" placeholder="Image URL ...">
+                    <input type="text" name="image" id="image" placeholder="Image URL ...( image can be only width 300px and height 300px or lower than that )">
+                </div>
+                <div class="input">
+                    <label for="size">Size</label>
+                    <select name="size" id="size">
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                    </select>
                 </div>
                 <div class="card_button btn_dialog">
                     <button type="button" onclick="cancel()">Cancel</button>
-                    <button type="button">Add Product</button>
+                    <button type="button" onclick="addProduct()">Add Product</button>
                 </div>
             </dialog>
         </div>

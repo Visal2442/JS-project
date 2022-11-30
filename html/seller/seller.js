@@ -1,6 +1,12 @@
-
-const tbody=document.querySelector("tbody");
+// ========= DOM HTML ========
+const table=document.querySelector("table");
 const dialog_container=document.querySelector(".dialog_container");
+const name_product=document.querySelector("#name");
+const price_product=document.querySelector("#price");
+const currency=document.querySelector("#currency");
+const img_product=document.querySelector("#image");
+const more_info=document.querySelector("#more_info");
+
 
 // ========== Variable=====
 let all_products=[
@@ -16,6 +22,7 @@ let all_products=[
         price:70,
         size: "XL",
         star: 4,
+        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
     },
     {
         url:"http://127.0.0.1:49344/img/colorful.png",
@@ -50,7 +57,7 @@ let all_products=[
 
     // ========== Local storage=====
 let saveData=()=>{
-    localStorage.setItem("Products", JSON.stringify(all_products));
+    localStorage.setItem("products", JSON.stringify(all_products));
 }
     
 let loadStorge=()=>{
@@ -71,8 +78,11 @@ let show=(element)=>{
 
 // =========== Display product for seller =======
 let displaySellerProduct=()=>{
+    document.querySelector("tbody").remove();
+    let tbody=document.createElement("tbody");
     for(let index in all_products){
         let tr=document.createElement("tr");
+        tr.dataset.index=index;
         // ===== create td 1=====
         let td1=document.createElement("td");
         let name=document.createElement("div");
@@ -109,6 +119,7 @@ let displaySellerProduct=()=>{
         btn2.className="delete";
         btn2.type="button";
         btn2.textContent="Delete";
+        btn2.addEventListener("click",deleteProduct);
         action.append(btn1, btn2);
         td4.appendChild(action);
 
@@ -116,6 +127,7 @@ let displaySellerProduct=()=>{
         tr.append(td1, td2, td3, td4);
         tbody.appendChild(tr);
     }
+    table.appendChild(tbody);
 }
 
 // ========= Onadd product =====
@@ -127,12 +139,73 @@ let cancel=()=>{
     hide(dialog_container);
 }
 
+// ======= Add product =======
+let addProduct = ()=>{
+    hide(dialog_container);
+    let newProduct={};
+    let isTrue=true;
+    let name_product=document.querySelector("#name");
+    let more_info=document.querySelector("#more_info");
+    let price_product=document.querySelector("#price");
+    let currency=document.querySelector("#currency");
+    let img_product=document.querySelector("#image");
+    let size=document.querySelector("#size");
 
+    newProduct.url=img_product.value;
+    newProduct.title=name_product.value;
+    newProduct.price=price_product.value;
+    newProduct.star=5;
+    newProduct.size=size.value;
+    newProduct.description=more_info.value;
+    newProduct.currency=currency.value;
+    
+    if(name_product.value.length>30){
+        isTrue=false;
+        alert("Your product name is too long");
+    }
+    if(more_info.value===""){
+        isTrue=false;
+        alert("Fill your description");
+    }
+    if(price_product.value<1){
+        isTrue=false;
+        alert("Enter a valid price");
+    }
+    if(currency.value!== "dollar" || currency.value!=="pound"){
+        isTrue=false;
+        alert("Enter a valid currency");
+    }
+    if(size.value=="L"){
+        alert("YOU")
+    }
+    let img_extension=img_product.value.slice(img_product.value.length-3, img_product.value.length);
+    console.log(img_extension);
+    if(img_extension!=="png" || img_extension!=="jpg" || img_extension!=="gif"){
+        isTrue=false;
+        alert("Enter a valid image format");
+    }
+    if(isTrue){
+        
+    }
+}
+
+
+
+
+
+
+// ======== Delete product ========
+let deleteProduct=(event)=>{
+    let index=event.target.parentElement.parentElement.parentElement.dataset.index;
+    console.log(index);
+    all_products.splice(index,1);
+    saveData();
+    displaySellerProduct();
+}
 
 
 
 // ======== Call function=======
-saveData()
 loadStorge();
 displaySellerProduct();
 
