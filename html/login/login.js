@@ -1,9 +1,10 @@
-const  notification=document.querySelector(".nb");
 
+// ====== Check if cart has no items =======
 let cart=JSON.parse(localStorage.getItem("cart"));
 if(cart.length== 0){
-    notification.style.display="none";
+    document.querySelector(".nb").style.display="none";
 }
 else{
-    notification.style.display="";
+    document.querySelector(".nb").textContent=cart.length;
+    document.querySelector(".nb").style.display="";
 }

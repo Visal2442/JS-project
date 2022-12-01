@@ -6,7 +6,6 @@ const product_detail = document.querySelector(".detail");
 const search_container = document.querySelector(".search_container");
 const slide1_container = document.querySelector(".slide1_container");
 const header= document.querySelector(".header");
-const  notification=document.querySelector(".nb");
 
 // ===== Variable ====
 let images = ["img1.jpg", "img-1.jpg"];
@@ -95,15 +94,13 @@ let loadStorge = () => {
     }
     //  ===== Check cart has items or not====
     if(cart.length== 0){
-        notification.style.display="none";
+        document.querySelector(".nb").style.display="none";
     }
     else{
-        notification.style.display="";
+        document.querySelector(".nb").textContent=cart.length;
+        document.querySelector(".nb").style.display="";
     }
 }
-
-
-
 
 
 // ======= Display products =======
@@ -320,17 +317,13 @@ let hideDetail=()=>{
     location.reload();
 }
 
+
 // ======= Add product to cart function =======
 let addCart = (event) => {
     let newCart = {};
     let index = event.target.parentElement.parentElement.dataset.index;
-
     // Add to newCart
-    newCart.url = all_products[index].url;
-    newCart.title = all_products[index].title;
-    newCart.price = all_products[index].price;
-    newCart.star = all_products[index].star;
-    newCart.size = all_products[index].size;
+    newCart=all_products[index];
 
     if (typeof(cart) == "object") {
         cart.push(newCart);
@@ -340,12 +333,12 @@ let addCart = (event) => {
         cart.push(newCart);
         saveCart();
     }
-    location.reload();
+    location.reload();   
 }
 
 
 // ======= Call Function======
-// saveData();
+// saveData(); 
 loadStorge();
 dispalyProduct();
 slideShow();

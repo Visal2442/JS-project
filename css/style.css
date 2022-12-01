@@ -65,13 +65,11 @@ a{
     border-bottom: 4px solid #5c5c59;
 }
 .nb{
-    content: "";
-    width: 10px;
-    height: 10px;
-    background: red;
     position: absolute;
     right: 13%;
-    top: 40%;
+    top: 22%;
+    font-size:x-large;
+    color: red;
 }
 /* ====== SLIDE SHOW 1===== */
 .slide1_container{
@@ -138,6 +136,7 @@ a{
     display: flex;
     justify-content: space-between;
 }
+
 .card_button button{
     border-radius: var(--main-radius);
     padding: var(--btn-padding);

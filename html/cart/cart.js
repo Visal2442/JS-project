@@ -1,15 +1,18 @@
 // ======= DOM HTML =======
 const tbody=document.querySelector("tbody");
-const  notification=document.querySelector(".nb");
 
 // ========= Get all products from local storage =======
 let cart=JSON.parse(localStorage.getItem("cart"));
+
+// ======= Check whether in cart has items or not =====
 if(cart.length== 0){
-    notification.style.display="none";
+    document.querySelector(".nb").style.display="none";
 }
 else{
-    notification.style.display="";
+    document.querySelector(".nb").textContent=cart.length;
+    document.querySelector(".nb").style.display="";
 }
+
 
 // ========= Local Storage =======
 let saveCart=()=>{
@@ -68,7 +71,6 @@ let displayCart=()=>{
         input.min="1";
         input.value="1";
         input.style.textAlign="center";
-        input.addEventListener("click", addMore);
         td2.appendChild(input);
 
         // Create td3
@@ -94,14 +96,6 @@ let displayCart=()=>{
         tbody.appendChild(tr);
     }
     price.textContent="$"+total_price;
-}
-
-// ====== Add more item in cart =====
-let addMore=()=>{
-    // let price=document.querySelector(".total").firstElementChild.firstElementChild.textContent;
-    // let newPrice=document.querySelector(".quantity").value;
-    // console.log(parseInt(price.slice(1, price.length))*newPrice)
-    // document.querySelector(".total").firstElementChild.firstElementChild.textContent="$"+(parseInt(price.slice(1, price.length))*2)
 }
 
 // ========= Delete cart =======

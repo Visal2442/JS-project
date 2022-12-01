@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecommerce</title>
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -18,12 +19,12 @@
             </div>
             <div class="nav_right">
                 <ul>
-                    <div class="nb"></div>
+                    <div class="nb">0</div>
                     <li><a href="index.html" class="active">HOME</a></li>
                     <li><a href="html/store/store.html">STORE</a></li>
-                    <li><a href="html/seller/seller.html">SELLER</a></li>
+                    <!-- <li><a href="html/seller/seller.html">SELLER</a></li> -->
                     <li><a href="html/cart/cart.html">CART</a></li>
-                    <li><a href="html/login/login.html">LOGIN</a></li>
+                    <li><a href="html/login/login.html">SIGN UP</a></li>
                 </ul>
             </div>
         </div>
@@ -41,8 +42,9 @@
                     <p><a href="html/store/store.html">See all</a></p>
                 </div>
             <!-- =====Card container for slide show ==== -->
-                <div class="card_container">
-                    <div class="card" data-index="0">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper card_container">
+                    <div class="swiper-slide card" data-index="0">
                         <div class="card_img">
                             <img src="img/blackJacket.jpg" alt="Black">
                         </div>
@@ -135,6 +137,10 @@
                     <div class="next">&#10095;</div>
                 </div>
             </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
         </div>
 
 
@@ -283,7 +289,6 @@
         </footer>
 
     </div>
-    
 </body>
 <script src="main.js"></script>
 </html>

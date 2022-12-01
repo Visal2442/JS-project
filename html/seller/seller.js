@@ -1,3 +1,4 @@
+
 // ========= DOM HTML ========
 const table=document.querySelector("table");
 const dialog_container=document.querySelector(".dialog_container");
@@ -7,19 +8,10 @@ const currency=document.querySelector("#currency");
 const img_product=document.querySelector("#image");
 const more_info=document.querySelector("#more_info");
 const btn_dialog=document.querySelector(".btn_dialog");
-const  notification=document.querySelector(".nb");
 
 // ========== Get all products from local storage=====
 let all_products=JSON.parse(localStorage.getItem("products"))
 
-// ===== Check cart has items or not====
-let cart=JSON.parse(localStorage.getItem("cart"));
-if(cart.length== 0){
-    notification.style.display="none";
-}
-else{
-    notification.style.display="";
-}
     // ========== Local storage=====
 let saveData=()=>{
     localStorage.setItem("products", JSON.stringify(all_products));
@@ -189,4 +181,3 @@ let deleteProduct=(event)=>{
 saveData();
 loadStorge();
 displaySellerProduct();
-

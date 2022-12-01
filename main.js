@@ -5,7 +5,7 @@ const slide2_container = document.querySelectorAll(".slide2_container");
 const product_detail=document.querySelector(".detail");
 const section=document.querySelector("section");
 const slide1_container=document.querySelector(".slide1_container");
-const  notification=document.querySelector(".nb");
+
 
 // ===== Variable====
 let images=["img1.jpg", "img-1.jpg"];
@@ -69,13 +69,14 @@ let slide1_product=
                 }
                 ]
 
-//  ===== Check cart has items or not====
+// ====== Check if cart has no items =======
 let cart=JSON.parse(localStorage.getItem("cart"));
 if(cart.length== 0){
-    notification.style.display="none";
+    document.querySelector(".nb").style.display="none";
 }
 else{
-    notification.style.display="";
+    document.querySelector(".nb").textContent=cart.length;
+    document.querySelector(".nb").style.display="";
 }
 
 // ===== Slide show ========
@@ -176,14 +177,19 @@ let showDetail=(event)=>{
      let btn_detail=document.createElement("div");
      btn_detail.classList.add("card_button", "btn_detail");
      // ======Btn buy =====
-     let btn_buy=document.createElement("button");
-     btn_buy.type="button";
-     btn_buy.textContent="Buy Now";
+     let btn_back=document.createElement("button");
+     btn_back.type="button";
+     btn_back.textContent="Back";
+     btn_back.a="index.html"
+     let a = document.createElement("a");
+     a.href="index.html";
+     a.appendChild(btn_back)
+
      // ====== Btn add to cart =====
      let btn_cart=document.createElement("button");
      btn_cart.type="button";
      btn_cart.textContent="Add Cart";
-     btn_detail.append(btn_buy, btn_cart);
+     btn_detail.append(a, btn_cart);
      img_detail.appendChild(btn_detail);
  
      // append all child to product_details
@@ -195,6 +201,7 @@ let showDetail=(event)=>{
 
 // ====== Call function ========
 slideShow()
+
 
 
 
