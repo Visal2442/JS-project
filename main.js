@@ -81,7 +81,7 @@ let slideShow=()=>{
     else{
         count_img=0
     }
-    setTimeout("slideShow()", 2000);
+    setTimeout("slideShow()", 1000);
 }
 
 // =======Hide function=====

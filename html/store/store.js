@@ -27,8 +27,49 @@ let all_products = [
         star: 3,
         size: "L",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
+    },
+    {
+        url: "https://m.media-amazon.com/images/I/711L-j52ggL._AC_UL1500_.jpg",
+        title: "Hoodies Hooded Sweatshirt",
+        price: 40,
+        star: 5,
+        size: "L",
+        description: "Unisex Christmas Hoodie 3D Printed Cosplay Hoodies Hooded Sweatshirt Pullover for Men Women Adults Youth"
+    },
+    {
+        url: "https://m.media-amazon.com/images/I/71HfSU+gRjL._AC_UL1500_.jpg",
+        title: "Hoodies Hooded Sweatshirt",
+        price: 20,
+        star: 3,
+        size: "M",
+        description: "Pplicable Scenarios: Suitable For Daily Wear, Hanging Out, Traveling, Home Decoration, Etc. Suitable For Spring, Autumn Wear."
+    },
+    {
+        url: "https://m.media-amazon.com/images/I/81IiLQkW6dL._AC_UL1500_.jpg",
+        title: "Homllyer Ripped Jeans",
+        price: 20,
+        star: 2,
+        size: "XL",
+        description: "The Homllyer Men’s Relaxed Fit Leg jean features the timeless five pocket design for a look that shines at the restaurant, work, or at home among family and friends."
     }
 ]
+
+// ======= Slide show function =====
+let slideShow = () => {
+    let image = "../../img/";
+    image += images[count_img];
+    img.src = image;
+    img.style.transform = "translateX(-180deg)";
+    img.style.transition = "all 0.5s"
+
+    if (count_img < images.length - 1) {
+        count_img++;
+    }
+    else {
+        count_img = 0;
+    }
+    setTimeout("slideShow()", 1000);
+}
 
 
 // =======Local Storge=======
@@ -115,24 +156,6 @@ let dispalyProduct = () => {
         card.append(card_img, card_footer)
         card_container.appendChild(card);
     }
-}
-
-
-// ======= Slide show function =====
-let slideShow = () => {
-    let image = "../../img/";
-    image += images[count_img];
-    img.src = image;
-    img.style.transform = "translateX(-180deg)";
-    img.style.transition = "all 0.5s"
-
-    if (count_img < images.length - 1) {
-        count_img++;
-    }
-    else {
-        count_img = 0;
-    }
-    setTimeout("slideShow()", 2000);
 }
 
 
@@ -278,7 +301,8 @@ let addCart = (event) => {
 }
 
 
-// ======= Call Function======s
+// ======= Call Function======
+// saveData();
 loadStorge();
 dispalyProduct();
 slideShow();

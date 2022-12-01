@@ -96,12 +96,12 @@ let onAdd=()=>{
 // ======= Cancel function ======
 let cancel=()=>{
     hide(dialog_container);
+    location.reload();
 }
 
 // ======= Add product =======
 let addProduct = ()=>{
     let newProduct={};
-    let isTrue=true;
 
     let name_product=document.querySelector("#name");
     let more_info=document.querySelector("#more_info");
