@@ -2,7 +2,7 @@
 const tbody=document.querySelector("tbody");
 
 
-// ========= Variable =======
+// ========= Get all products from local storage =======
 let cart=JSON.parse(localStorage.getItem("cart"));
 
 // ========= Local Storage =======
@@ -13,8 +13,10 @@ let saveCart=()=>{
 
 // ======= Display cart function =======
 let displayCart=()=>{
-
+    let price=document.querySelector(".total").firstElementChild.firstElementChild;
+    let total_price=0;
     for(let index in cart){
+        total_price+=parseInt(cart[index].price);
         let tr= document.createElement("tr");
         tr.dataset.index=index;
     
@@ -48,28 +50,29 @@ let displayCart=()=>{
         cart_detail.append(h2, div_rate, p);
         // ========= AppendChild to cart_name ======
         cart_name.append(image, cart_detail)
-        // ====== Append cart_name to td1====
+        // Append cart_name to td1
         td1.appendChild(cart_name);
 
-        // ====== Create td2 ======
+        //  Create td2 
         let td2=document.createElement("td");
-        // ======= Create input =====
+        //Create input
         let input=document.createElement("input");
         input.type="number";
         input.min="1";
         input.max="100";
+        input.value="1";
         td2.appendChild(input);
 
-        // ====== Create td3=====
+        // Create td3
         let td3=document.createElement("td");
         td3.textContent="$"+cart[index].price;
 
-        // ====== Create td4=====
+        //Create td4
         let td4=document.createElement("td");
-        // ====== Create div button =====
+        // Create div button
         let div_btn_delete=document.createElement("div");
         div_btn_delete.className="btn_detail card_button btn_delete_cart";
-        // ======== create button delete======
+        //create button delete
         let button=document.createElement("button");
         button.type="button";
         button.className="delete";
@@ -78,10 +81,11 @@ let displayCart=()=>{
         div_btn_delete.appendChild(button);
         td4.appendChild(div_btn_delete);
 
-        // ======== Appedn all td to tr======
+        // Appedn all td to tr
         tr.append(td1, td2, td3, td4);
         tbody.appendChild(tr);
     }
+    price.textContent="$"+total_price;
 }
 
 

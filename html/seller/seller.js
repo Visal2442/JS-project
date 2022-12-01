@@ -1,60 +1,16 @@
 // ========= DOM HTML ========
 const table=document.querySelector("table");
 const dialog_container=document.querySelector(".dialog_container");
-const dialog_edit=document.querySelector(".dialog_edit");
 const name_product=document.querySelector("#name");
 const price_product=document.querySelector("#price");
 const currency=document.querySelector("#currency");
 const img_product=document.querySelector("#image");
 const more_info=document.querySelector("#more_info");
+const btn_dialog=document.querySelector(".btn_dialog");
 
 
-// ========== Variable=====
-let all_products=[
-    {   url:"http://127.0.0.1:49344/img/blackJacket.jpg",
-        title:"Glennaker Rain Jacket",
-        price:30,
-        star: 3,
-        size: "L",
-        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
-    },
-    {   url:"http://127.0.0.1:49344/img/airmax.png",
-        title:"Flannel Lined Jacket",
-        price:70,
-        size: "XL",
-        star: 4,
-        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
-    },
-    {
-        url:"http://127.0.0.1:49344/img/colorful.png",
-        title:"Colorful Jacket",
-        price:70,
-        star: 5,
-        size: "XL",
-        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
-    },
-    {   url:"http://127.0.0.1:49344/img/brownJacket.png",
-        title:"Flannel Lined Jacket",
-        price:40,
-        star:5,
-        size: "XXL",
-        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
-    },
-    {   url:"https://m.media-amazon.com/images/I/61cjcbDKXoL._AC_UY879_.jpg",
-        title:"Jordan 9999",
-        price:40,
-        star:5,
-        size: "M",
-        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
-    },
-    {   url:"https://m.media-amazon.com/images/I/71HJma0PdFL._AC_UX695_.jpg",
-        title:"Nike 6666",
-        price:20,
-        star:3,
-        size: "L",
-        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
-    }
-    ]
+// ========== Get all products from local storage=====
+let all_products=JSON.parse(localStorage.getItem("products"))
 
     // ========== Local storage=====
 let saveData=()=>{
@@ -134,12 +90,12 @@ let displaySellerProduct=()=>{
 
 // ========= On Add =====
 let onAdd=()=>{
+    btn_dialog.lastElementChild.textContent="Add Product";
     show(dialog_container);
 }
 // ======= Cancel function ======
 let cancel=()=>{
     hide(dialog_container);
-    hide(dialog_edit)
 }
 
 // ======= Add product =======
@@ -164,73 +120,51 @@ let addProduct = ()=>{
     newProduct.currency=currency.value;
     
     if(name_product.value.length>30 || name_product.value===""){
-        isTrue=false;
         alert("Check your product name");
     }
     if(more_info.value===""){
-        isTrue=false;
         alert("Fill your description");
     }
     if(price_product.value<1){
-        isTrue=false;
         alert("Enter a valid price");
     }
     if(currency.value=="Choose your currency ..."){
-        isTrue=false;
         alert("Choose your currency");
     }
     if(img_product.value==""){
-        isTrue=false;
         alert("Please add product image");
     }
-    if(isTrue){
-        hide(dialog_container);
+    else{
         all_products.push(newProduct);
+        hide(dialog_container);
         saveData();
         displaySellerProduct();
     }
 }
 
+
+
 // ======= Edit product ========
 let edit = (event)=>{
+    btn_dialog.lastElementChild.textContent="Edit"
     let index=event.target.parentElement.parentElement.parentElement.dataset.index;
-    let btn=event.target.textContent;
-    console.log(btn);
-    console.log(index);
     
-    document.querySelector("#name2").value=all_products[index].title;
-    document.querySelector("#more_info2").value=all_products[index].description;
-    document.querySelector("#price2").value=all_products[index].price;
-    document.querySelector("#image2").value=all_products[index].url;
-    document.querySelector("#size2").value=all_products[index].size;
+    document.querySelector("#name").value=all_products[index].title;
+    document.querySelector("#more_info").value=all_products[index].description;
+    document.querySelector("#price").value=all_products[index].price;
+    document.querySelector("#image").value=all_products[index].url;
+    document.querySelector("#size").value=all_products[index].size;
     
     all_products.splice(index, 1);
-    show(dialog_edit);
-    console.log("me")
+    show(dialog_container);
 }
 
-let editProduct = (event)=>{
-    let index=event.target;
-    let newEdit={};
-    console.log(index);
-
-    newEdit.url=document.querySelector("#image2").value;
-    newEdit.title=document.querySelector("#name2").value;
-    newEdit.price= document.querySelector("#price2").value;
-    newEdit.star=5;
-    newEdit.size= document.querySelector("#size2").value;
-    newEdit.description=document.querySelector("#more_info2").value;
-    all_products.splice(index, 0, newEdit);
-    saveData();
-    hide(dialog_edit)
-}
 
 
 
 // ======== Delete product ========
 let deleteProduct=(event)=>{
     let index=event.target.parentElement.parentElement.parentElement.dataset.index;
-    console.log(index);
     all_products.splice(index,1);
     saveData();
     displaySellerProduct();
@@ -239,6 +173,7 @@ let deleteProduct=(event)=>{
 
 
 // ======== Call function=======
+saveData();
 loadStorge();
 displaySellerProduct();
 

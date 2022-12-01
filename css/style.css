@@ -227,7 +227,7 @@ input[type="search"]{
 }
 
 table{
-    width: 80%;
+    width: 90%;
     margin: 20px auto;
 }
 table, th, td{
@@ -257,7 +257,7 @@ th{
     justify-content: flex-end;
 }
 .add button{
-    margin: 0 10% 2% 10%;
+    margin: 0 5% 2% 5%;
     padding: var(--btn-padding);
 }
 

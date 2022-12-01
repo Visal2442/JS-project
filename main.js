@@ -12,12 +12,12 @@ let count_img=0;
 let slide1_product=
                 [
                 {
-                    url:"http://127.0.0.1:49344/img/blackJacket.jpg",
-                    title:"Glennaker Rain Jacket",
-                    price:30,
-                    star: 3,
-                    size: "L",
-                    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
+                    url: "http://127.0.0.1:49344/img/brownJacket.png",
+                    title: "Flannel Lined Jacket",
+                    price: 40,
+                    star: 5,
+                    size: "XXL",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
                 },
                 {   url:"http://127.0.0.1:49344/img/brownJacket.png",
                     title:"Flannel Lined Jacket",
