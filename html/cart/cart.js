@@ -1,9 +1,15 @@
 // ======= DOM HTML =======
 const tbody=document.querySelector("tbody");
-
+const  notification=document.querySelector(".nb");
 
 // ========= Get all products from local storage =======
 let cart=JSON.parse(localStorage.getItem("cart"));
+if(cart.length== 0){
+    notification.style.display="none";
+}
+else{
+    notification.style.display="";
+}
 
 // ========= Local Storage =======
 let saveCart=()=>{
@@ -58,9 +64,11 @@ let displayCart=()=>{
         //Create input
         let input=document.createElement("input");
         input.type="number";
+        input.className="quantity";
         input.min="1";
-        input.max="100";
         input.value="1";
+        input.style.textAlign="center";
+        input.addEventListener("click", addMore);
         td2.appendChild(input);
 
         // Create td3
@@ -88,6 +96,13 @@ let displayCart=()=>{
     price.textContent="$"+total_price;
 }
 
+// ====== Add more item in cart =====
+let addMore=()=>{
+    // let price=document.querySelector(".total").firstElementChild.firstElementChild.textContent;
+    // let newPrice=document.querySelector(".quantity").value;
+    // console.log(parseInt(price.slice(1, price.length))*newPrice)
+    // document.querySelector(".total").firstElementChild.firstElementChild.textContent="$"+(parseInt(price.slice(1, price.length))*2)
+}
 
 // ========= Delete cart =======
 let deleteCart=(event)=>{

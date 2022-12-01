@@ -64,7 +64,15 @@ a{
 .nav_right ul li a:hover{
     border-bottom: 4px solid #5c5c59;
 }
-
+.nb{
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: red;
+    position: absolute;
+    right: 13%;
+    top: 40%;
+}
 /* ====== SLIDE SHOW 1===== */
 .slide1_container{
     width: 100%;
@@ -72,6 +80,7 @@ a{
 .slide1_container img{
     width: 100%;
     height: 500px;
+    object-fit: contain;
 }
 
 
@@ -100,10 +109,10 @@ a{
 }
 .card{
     background: var(--main-color);
-    border-radius:var(--main-radius);
+    border-radius: var(--main-radius);
     box-shadow: 0 1px 5px rgba(188, 174, 174, 0.5);
     padding: 10px;
-    transition: transform 2s;
+    transition: 2s;
 }
 .card:hover{
     box-shadow: 0 1px 5px rgb(188, 186, 186);
@@ -306,8 +315,8 @@ dialog h1{
 .input{
     width: 100%;
     display: flex;
-    padding: 0 20px;  
     flex-direction: column;
+    padding: 0 20px;  
     gap: 5px;
     margin-bottom: 15px;
 }
@@ -401,7 +410,7 @@ thead{
 /* ================================================================ */
 .form_container{
     width: 30%;
-    margin: 5rem auto;
+    margin: 3rem auto;
 }
 form{
     background:rgb(252, 251, 251);

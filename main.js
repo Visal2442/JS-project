@@ -5,6 +5,7 @@ const slide2_container = document.querySelectorAll(".slide2_container");
 const product_detail=document.querySelector(".detail");
 const section=document.querySelector("section");
 const slide1_container=document.querySelector(".slide1_container");
+const  notification=document.querySelector(".nb");
 
 // ===== Variable====
 let images=["img1.jpg", "img-1.jpg"];
@@ -67,6 +68,15 @@ let slide1_product=
                     description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
                 }
                 ]
+
+//  ===== Check cart has items or not====
+let cart=JSON.parse(localStorage.getItem("cart"));
+if(cart.length== 0){
+    notification.style.display="none";
+}
+else{
+    notification.style.display="";
+}
 
 // ===== Slide show ========
 let slideShow=()=>{

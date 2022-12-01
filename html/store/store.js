@@ -6,11 +6,14 @@ const product_detail = document.querySelector(".detail");
 const search_container = document.querySelector(".search_container");
 const slide1_container = document.querySelector(".slide1_container");
 const header= document.querySelector(".header");
+const  notification=document.querySelector(".nb");
+
 // ===== Variable ====
 let images = ["img1.jpg", "img-1.jpg"];
 let count_img = 0;
-let cart = [];
+let cart=[];
 // ====== Data =====
+
 let all_products = [
     {
         url: "https://m.media-amazon.com/images/I/61cjcbDKXoL._AC_UY879_.jpg",
@@ -90,7 +93,17 @@ let loadStorge = () => {
     if (cart_storage !== null) {
         cart = cart_storage;
     }
+    //  ===== Check cart has items or not====
+    if(cart.length== 0){
+        notification.style.display="none";
+    }
+    else{
+        notification.style.display="";
+    }
 }
+
+
+
 
 
 // ======= Display products =======
@@ -111,6 +124,7 @@ let dispalyProduct = () => {
         // card_footer
         let card_footer = document.createElement("div");
         card_footer.className = "card_footer";
+        card_footer.dataset.index = index;
         // card_title 
         let card_title = document.createElement("div");
         card_title.className = "card_title";
@@ -190,8 +204,8 @@ let sortCost=(price)=>{
             cards[i].style.display = "none";
         }
     }
-
 }
+
 let sort=()=>{
     let price=document.querySelector("#price").value;
     sortCost(price)
@@ -229,6 +243,7 @@ let showDetail = (event) => {
     // create img_details
     let img_detail = document.createElement("div");
     img_detail.className = "img_detail";
+    img_detail.dataset.index=index;
 
     // create h1
     let h1 = document.createElement("h1");
@@ -308,8 +323,7 @@ let hideDetail=()=>{
 // ======= Add product to cart function =======
 let addCart = (event) => {
     let newCart = {};
-    let index = event.target.parentElement.parentElement.parentElement.dataset.index;
-    let event_title = event.target.parentElement.parentElement.firstElementChild.firstElementChild.textContent;
+    let index = event.target.parentElement.parentElement.dataset.index;
 
     // Add to newCart
     newCart.url = all_products[index].url;
@@ -318,7 +332,7 @@ let addCart = (event) => {
     newCart.star = all_products[index].star;
     newCart.size = all_products[index].size;
 
-    if (typeof (cart) == "object") {
+    if (typeof(cart) == "object") {
         cart.push(newCart);
         saveCart();
     }
@@ -326,6 +340,7 @@ let addCart = (event) => {
         cart.push(newCart);
         saveCart();
     }
+    location.reload();
 }
 
 

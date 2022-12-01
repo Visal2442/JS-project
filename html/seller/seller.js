@@ -7,11 +7,19 @@ const currency=document.querySelector("#currency");
 const img_product=document.querySelector("#image");
 const more_info=document.querySelector("#more_info");
 const btn_dialog=document.querySelector(".btn_dialog");
-
+const  notification=document.querySelector(".nb");
 
 // ========== Get all products from local storage=====
 let all_products=JSON.parse(localStorage.getItem("products"))
 
+// ===== Check cart has items or not====
+let cart=JSON.parse(localStorage.getItem("cart"));
+if(cart.length== 0){
+    notification.style.display="none";
+}
+else{
+    notification.style.display="";
+}
     // ========== Local storage=====
 let saveData=()=>{
     localStorage.setItem("products", JSON.stringify(all_products));
@@ -113,7 +121,13 @@ let addProduct = ()=>{
     // ==== Get value from input =======
     newProduct.url=img_product.value;
     newProduct.title=name_product.value;
-    newProduct.price=price_product.value;
+    // Convert frome pond to dollar 
+    if(currency.value==="pound"){
+        newProduct.price=price_product.value*1.21;
+    }
+    else{
+        newProduct.price=price_product.value;
+    }
     newProduct.star=5;
     newProduct.size=size.value;
     newProduct.description=more_info.value;
@@ -158,7 +172,6 @@ let edit = (event)=>{
     all_products.splice(index, 1);
     show(dialog_container);
 }
-
 
 
 
