@@ -5,7 +5,7 @@ const card_container = document.querySelector(".card_container");
 const product_detail = document.querySelector(".detail");
 const search_container = document.querySelector(".search_container");
 const slide1_container = document.querySelector(".slide1_container");
-
+const header= document.querySelector(".header");
 // ===== Variable ====
 let images = ["img1.jpg", "img-1.jpg"];
 let count_img = 0;
@@ -160,21 +160,41 @@ let dispalyProduct = () => {
 
 
 // ======= Search function=====
-let search = (price) => {
-    let input = document.querySelector("#search").value.toLowerCase();
+let search = () => {
     let cards = document.querySelectorAll(".card");
+    let input = document.querySelector("#search").value.toLowerCase();
     for (let i = 0; i < cards.length; i++) {
         let card_footer = cards[i].lastElementChild;
         let card_title = card_footer.firstElementChild;
         let title = card_title.firstElementChild.textContent.toLowerCase();
-        console.log(price);
         if (title.indexOf(input) > -1) {
             cards[i].style.display = "";
         }
-        else {
+        else { 
             cards[i].style.display = "none";
         }
     }
+}
+
+// ======== Sort product ====
+let sortCost=(price)=>{
+    let cards = document.querySelectorAll(".card");
+    for (let i = 0; i < cards.length; i++) {
+        let card_footer = cards[i].lastElementChild;
+        let card_title = card_footer.firstElementChild;
+        let cost=card_title.lastElementChild.textContent;
+        if(cost===price || price==="all"){
+            cards[i].style.display = "";
+        }
+        else{
+            cards[i].style.display = "none";
+        }
+    }
+
+}
+let sort=()=>{
+    let price=document.querySelector("#price").value;
+    sortCost(price)
 }
 
 // =======Hide function=====
@@ -192,6 +212,7 @@ let showDetail = (event) => {
     hide(card_container);
     hide(search_container);
     hide(slide1_container);
+    hide(header);
     let index = event.target.parentElement.parentElement.parentElement.dataset.index;
 
     // create div img
@@ -259,22 +280,29 @@ let showDetail = (event) => {
     btn_detail.classList.add("card_button", "btn_detail");
 
     //Btn buy 
-    let btn_buy = document.createElement("button");
-    btn_buy.type = "button";
-    btn_buy.textContent = "Buy Now";
+    let btn_back= document.createElement("button");
+    btn_back.type = "button";
+    btn_back.textContent = "Back";
+    btn_back.addEventListener("click", hideDetail);
 
     // Btn add to cart
     let btn_cart = document.createElement("button");
     btn_cart.type = "button";
     btn_cart.textContent = "Add Cart";
     btn_cart.addEventListener("click", addCart);
-    btn_detail.append(btn_buy, btn_cart);
+    btn_detail.append(btn_back, btn_cart);
     img_detail.appendChild(btn_detail);
 
     // append all child to product_details
     product_detail.append(div_img, img_detail);
 
     show(product_detail);
+}
+
+
+// ======= Hide detail ====
+let hideDetail=()=>{
+    location.reload();
 }
 
 // ======= Add product to cart function =======

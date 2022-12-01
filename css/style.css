@@ -20,6 +20,9 @@
     box-sizing: border-box;
     font-family: var(--font)
 }
+body{
+    height: 100vh;
+}
 
 a{
     text-decoration: none;
@@ -98,8 +101,13 @@ a{
 .card{
     background: var(--main-color);
     border-radius:var(--main-radius);
-    box-shadow: 0 1px 5px #b1aeae;
+    box-shadow: 0 1px 5px rgba(188, 174, 174, 0.5);
     padding: 10px;
+    transition: transform 2s;
+}
+.card:hover{
+    box-shadow: 0 1px 5px rgb(188, 186, 186);
+    transform: translateY(-20px);
 }
 .card_footer{
     display: flex;
@@ -130,6 +138,9 @@ a{
 .card_button button:first-child{
     border: 1px solid var(--btn-border-color);
     background: #fff;  
+}
+.card_button button:hover{
+    opacity: 0.5;
 }
 .card_button button:last-child{
     border: none;
@@ -200,9 +211,11 @@ input[type="search"]{
 }
 
 .detail{
+    width: 80%;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 50px;
+    margin: auto;
     padding: var(--main-padding);
     margin-bottom: 20px;
 }
@@ -218,7 +231,9 @@ input[type="search"]{
     justify-content:flex-start;
     gap: 10px;
 }
-
+.header{
+    margin: 2% 5%;
+}
 
 
 /* ================================================================ */
@@ -235,7 +250,6 @@ table{
     margin: 20px auto;
 }
 table, th, td{
-    /* border: none; */
     border: 1px solid var(--btn-border-color);
     border-collapse: collapse;
 }
@@ -382,6 +396,29 @@ thead{
 
 
 
+/* ================================================================ */
+                                /* LOGIN PAGE */
+/* ================================================================ */
+.form_container{
+    width: 30%;
+    margin: 5rem auto;
+}
+form{
+    background:rgb(252, 251, 251);
+    padding: 10px;
+    box-shadow: 0 0 5px 1px rgb(187, 183, 183);
+    border-radius: var(--main-radius);
+}
+form h1{
+    text-align: center;
+    margin: 20px 0;
+}
+.btn_login{
+    width: 40%;
+}
+
+
+
 /* ======= Footer ====== */
 footer{
     background: var(--bg-footer);
@@ -406,27 +443,7 @@ footer{
 
 
 
-/* ================================================================ */
-                                /* LOGIN PAGE */
-/* ================================================================ */
-.form_container{
-    width: 30%;
-    margin: 5rem auto;
-}
-form{
-    background:rgb(252, 251, 251);
-    padding: 10px;
-    box-shadow: 0 0 5px 5px rgb(187, 183, 183);
-    border-radius: var(--main-radius);
-    
-}
-form h1{
-    text-align: center;
-    margin: 20px 0;
-}
-.btn_login{
-    width: 40%;
-}
+
 
 
 
