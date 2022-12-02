@@ -112,9 +112,13 @@ let deleteCart=(event)=>{
     location.reload();
 }
 
-// ======= Check Out =====
+// ======= Show Check Out =====
 let checkOut=()=>{
     modal.style.display="block";
+}
+// ====== Hide checkOut =====
+let hideCheckOut=()=>{
+    modal.style.display="none";
 }
 // ======== Call functions ========
 displayCart();

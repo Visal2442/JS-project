@@ -28,59 +28,60 @@
             </div>
             <i id="light" class="fa fa-toggle-off" onclick="darkMode()"></i>
         </div>
-
-        <div class="cart_container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Product</th>
-                        <th>Quntity</th>
-                        <th>Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- <tr>
-                        <td>
-                            <div class="name cart_name">
-                                <img src="../../img/blackJacket.jpg">
-                                <div class="cart_detail">
-                                    <h2>Black Jacket</h2>
-                                    <div class="rate">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
+        <div class="cart">
+            <div class="cart_container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quntity</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr>
+                            <td>
+                                <div class="name cart_name">
+                                    <img src="../../img/blackJacket.jpg">
+                                    <div class="cart_detail">
+                                        <h2>Black Jacket</h2>
+                                        <div class="rate">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <p>SIZE: L</p>
                                     </div>
-                                    <p>SIZE: L</p>
                                 </div>
-                            </div>
-                        </td>
-                        <td>
-                            <input type="number" min="1" max="100">
-                        </td>
-                        <td>$10</td>
-                        <td>
-                            <div class="btn_detail card_button btn_delete_cart">
-                                <button type="button" class="delete">Delete</button>
-                            </div>
-                        </td>
-                    </tr> -->
-                </tbody>
-            </table>
-
-            <div class="total_price">
-                <div class="total">
-                    <p>Total price: <b>600</b></p>
-                    <p>Discount: <b>$0</b></p>
-                </div>
-                <div class="btn_buy card_button">
-                    <button type="button" onclick="checkOut()">CHECKOUT</button>
-                    <button type="button"><a href="../store/store.html"> CONTINUE SHOPPING</a></button>
+                            </td>
+                            <td>
+                                <input type="number" min="1" max="100">
+                            </td>
+                            <td>$10</td>
+                            <td>
+                                <div class="btn_detail card_button btn_delete_cart">
+                                    <button type="button" class="delete">Delete</button>
+                                </div>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+    
+                <div class="total_price">
+                    <div class="total">
+                        <p>Total price: <b>600</b></p>
+                        <p>Discount: <b>$0</b></p>
+                    </div>
+                    <div class="btn_buy card_button">
+                        <button type="button" onclick="checkOut()">CHECKOUT</button>
+                        <button type="button"><a href="../store/store.html"> CONTINUE SHOPPING</a></button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        </div>
 
     <!-- ====== Check out form ===== -->
     <div class="modal">
@@ -122,7 +123,7 @@
                     <button type="button">Purchase</button>
                 </div>
             </div>
-            <i class="fa fa-times" style="font-size: 30px;" onclick=""></i>
+            <i class="fa fa-times" style="font-size: 30px;" onclick="hideCheckOut()"></i>
         </div>
     </div>
     

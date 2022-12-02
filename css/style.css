@@ -20,15 +20,18 @@
     box-sizing: border-box;
     font-family: var(--font)
 }
-body{
+
+
+
+/* body{
     height: 100vh;
-}
+    background: none;
+} */
 
 a{
     text-decoration: none;
     color:var(--text-color);
 }
-
 
 .active{
     border-bottom: 4px solid #5c5c59;
@@ -36,16 +39,25 @@ a{
 /* ================================================================ */
                                     /* HOME PAGE */
 /* ================================================================ */
+.container{
+    background-image: url("../img/bg_1.jpg");
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 /* =====NAV BAR====== */
 .nav_bar{
-    background: #fff;
+    /* background:rgb(243, 243, 243, 0.9); */
     /* box-shadow: 0 2px 5px #b5b4b4; */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position:sticky; 
+    /* position:sticky;  */
     top: 0;
-    z-index: 2;
+    z-index: 5; 
     padding: 5px 50px;
 }
 .nav_left img{
@@ -85,7 +97,7 @@ a{
 .slide1_container img{
     width: 100%;
     height: 500px;
-    object-fit: contain;
+    /* object-fit: contain; */
 }
 
 
@@ -106,6 +118,7 @@ a{
 }
 
 .card_container{
+    background:rgb(243, 243, 243, 0.9);
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
@@ -113,9 +126,9 @@ a{
     padding: 20px 75px;
 }
 .card{
-    background: var(--main-color);
+    /* background: var(--main-color); */
     border-radius: var(--main-radius);
-    box-shadow: 0 1px 5px rgba(188, 174, 174, 0.5);
+    /* box-shadow: 0 1px 5px rgba(188, 174, 174, 0.5); */
     padding: 10px;
     transition: 2s;
 }
@@ -183,13 +196,12 @@ a{
 
 /* =========== Section===== */
 section{
-    background:#f3f3f3;
+    background:rgb(243, 243, 243, 0.9);
     display: flex;  
     align-items: center;
     justify-content: space-evenly;
     padding: var(--main-padding);
 }
-
 
 .section_left h1{
     font-size: xxx-large;
@@ -249,6 +261,9 @@ input[type="search"]{
 }
 .header{
     margin: 2% 5%;
+}
+.slide_top h1{
+    color:#fff;
 }
 
 
@@ -354,6 +369,9 @@ label{
 /* ================================================================ */
                                 /* CART PAGE */
 /* ================================================================ */
+.cart{
+    height: 100vh;
+}
 .cart_container {
     display: flex;
 }
@@ -474,6 +492,7 @@ thead{
     position: absolute;
     top: 3%;
     left: 2%;
+    cursor: pointer;
 }
 
 
