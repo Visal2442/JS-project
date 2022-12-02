@@ -349,7 +349,7 @@ let addCart = (event) => {
 
 
 // ======= Call Function======
-// saveData(); 
+// saveData();  
 loadStorge();
 dispalyProduct();
 slideShow();

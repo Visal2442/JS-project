@@ -76,7 +76,7 @@ a{
     cursor: pointer;
 }
 .dark{
-    background: rgb(69, 62, 62);
+    background: rgba(5, 4, 4, 0.9);
 }
 /* ====== SLIDE SHOW 1===== */
 .slide1_container{
@@ -183,7 +183,7 @@ a{
 
 /* =========== Section===== */
 section{
-    background:var(--bg-footer);
+    background:#f3f3f3;
     display: flex;  
     align-items: center;
     justify-content: space-evenly;
@@ -198,7 +198,7 @@ section{
 /* .section{
     margin-top: 10px;
 } */
-.section button{
+section button{
     padding: var(--btn-padding);
 }
 
@@ -417,76 +417,7 @@ thead{
 
 
 /* ===== Check out form ==== */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -16px;
-  }
-  
-  .col-25 {
-    flex: 25%;
-  }
-  
-  .col-50 {
-    flex: 50%;
-  }
-  
-  .col-75 {
-    flex: 75%;
-  }
-  
-  .col-25,
-  .col-50,
-  .col-75 {
-    padding: 0 16px;
-  }
-  
-  .cart_container{
-    background-color: #f2f2f2;
-    padding: 5px 20px 15px 20px;
-    border: 1px solid lightgrey;
-    border-radius: 3px;
-  }
-  
-  input[type=text] {
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
-  
-  label {
-    margin-bottom: 10px;
-    display: block;
-  }
-  
-  .icon-container {
-    margin-bottom: 20px;
-    padding: 7px 0;
-    font-size: 24px;
-  }
-  
-  .btn {
-    background-color: #04AA6D;
-    color: white;
-    padding: 12px;
-    margin: 10px 0;
-    border: none;
-    width: 100%;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 17px;
-  }
-  
-  .btn:hover {
-    background-color: #45a049;
-  }
-  
-  span.price {
-    float: right;
-    color: grey;
-  }
+
 
 
 
@@ -496,6 +427,9 @@ thead{
 .form_container{
     width: 30%;
     margin: 3rem auto;
+}
+.form_container input{
+    padding: 10px;
 }
 form{
     background:rgb(252, 251, 251);
@@ -508,7 +442,7 @@ form h1{
     margin: 20px 0;
 }
 .btn_login{
-    width: 40%;
+    width: 46%;
 }
 
 

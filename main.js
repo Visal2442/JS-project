@@ -14,7 +14,7 @@ let count_img=0;
 let slide1_product=
                 [
                 {
-                    url: "http://127.0.0.1:49344/img/brownJacket.png",
+                    url: "img/airmax.png",
                     title: "Flannel Lined Jacket",
                     price: 40,
                     star: 5,
@@ -85,6 +85,7 @@ else{
 let darkMode=()=>{
     mode.classList.toggle("fa-toggle-on");
     document.body.classList.toggle("dark");
+    document.querySelector("#section").classList.toggle("dark");
 }
 
 
@@ -120,7 +121,7 @@ let showDetail=(event)=>{
     hide(slide2_container[0]);
     hide(slide2_container[1]);
     hide(section);
-    hide(slide1_container);
+    // hide(slide1_container);
 
     // create div img
     let div_img=document.createElement("div");
