@@ -39,7 +39,7 @@ a{
 /* =====NAV BAR====== */
 .nav_bar{
     background: #fff;
-    box-shadow: 0 2px 5px #b5b4b4;
+    /* box-shadow: 0 2px 5px #b5b4b4; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -70,6 +70,10 @@ a{
     top: 22%;
     font-size:x-large;
     color: red;
+}
+.light i{
+    font-size: 30px;
+    cursor: pointer;
 }
 /* ====== SLIDE SHOW 1===== */
 .slide1_container{
@@ -176,17 +180,21 @@ a{
 
 /* =========== Section===== */
 section{
+    background:var(--bg-footer);
     display: flex;  
     align-items: center;
-    margin: 30px 10px;
+    justify-content: space-evenly;
+    /* margin: 30px 10px; */
     padding: var(--main-padding);
 }
+
+
 .section_left h1{
     font-size: xxx-large;
 }
-.section{
+/* .section{
     margin-top: 10px;
-}
+} */
 .section button{
     padding: var(--btn-padding);
 }
@@ -317,17 +325,17 @@ dialog h1{
     flex-direction: column;
     padding: 0 20px;  
     gap: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 .input input,
 dialog .input select{
-    padding: 10px;
+    padding: 5px;
     border-radius: 10px;
     border: 1px solid var(--btn-border-color);
     outline: none;
 }
 dialog .input select{
-    padding: 10px;
+    padding: 5px;
 }
 textarea{
     resize: none;
@@ -341,7 +349,9 @@ label{
     padding: 5px 20px; 
     margin-bottom: 10px;
 }
-
+.error{
+    color: #ff0000;
+}
 
 /* ================================================================ */
                                 /* CART PAGE */

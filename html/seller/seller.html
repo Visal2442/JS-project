@@ -70,14 +70,17 @@
                 <div class="product_name input">
                     <label for="name">Name</label>
                     <input type="text" name="name" id="name" placeholder="Product Name... (only 25 characters or lower than that)" maxlength="25">
+                    <p class="error_name error" style="display: none;">Invalid Name*</p>
                 </div> 
                 <div class="more_info input">
                     <label for="more_info">Description</label>
-                    <textarea name="more_info" id="more_info" cols="25" rows="5" placeholder="More detail"></textarea>
+                    <textarea name="more_info" id="more_info" cols="25" rows="3" placeholder="More detail"></textarea>
+                    <p class="error_decription error" style="display: none;">Fill Description*</p>
                 </div>
                 <div class="product_price input">
                     <label for="price">Price</label>
                     <input type="number" name="price" id="price" min="1" placeholder="Your price ...">
+                    <p class="error_price error" style="display: none;">Invalid Number*</p>
                 </div>
                 <div class="currency input">
                     <label for="currency">Currency</label>
@@ -86,10 +89,12 @@
                         <option value="dollar">Dollar</option>
                         <option value="pound">Pound</option>
                     </select>
+                    <p class="error_currency error" style="display: none;">Choose Currency*</p>
                 </div>
                 <div class="product_img input">
                     <label for="image">Image</label>
-                    <input type="text" name="image" id="image" placeholder="Image URL ...( image can be only width 300px and height 300px or lower than that )">
+                    <input type="text" name="image" id="image" placeholder="Image URL ...( image should be only width 300px and height 300px or lower than that )">
+                    <p class="error_image error" style="display: none;">Invalid Image*</p>
                 </div>
                 <div class="input">
                     <label for="size">Size</label>
@@ -100,6 +105,7 @@
                         <option value="XL">XL</option>
                         <option value="XXL">XXL</option>
                     </select>
+                    <p class="error_size error" style="display: none;">Choose Size*</p>
                 </div>
                 <div class="card_button btn_dialog">
                     <button type="button" onclick="cancel()">Cancel</button>

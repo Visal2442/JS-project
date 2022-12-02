@@ -18,6 +18,7 @@ let all_products = [
         url: "https://m.media-amazon.com/images/I/61cjcbDKXoL._AC_UY879_.jpg",
         title: "Jordan 9999",
         price: 40,
+        currency: "dollar",
         star: 5,
         size: "M",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
@@ -26,6 +27,7 @@ let all_products = [
         url: "https://m.media-amazon.com/images/I/71HJma0PdFL._AC_UX695_.jpg",
         title: "Nike 6666",
         price: 20,
+        currency: "dollar",
         star: 3,
         size: "L",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
@@ -34,6 +36,7 @@ let all_products = [
         url: "https://m.media-amazon.com/images/I/711L-j52ggL._AC_UL1500_.jpg",
         title: "Hoodies Hooded Sweatshirt",
         price: 40,
+        currency: "dollar",
         star: 5,
         size: "L",
         description: "Unisex Christmas Hoodie 3D Printed Cosplay Hoodies Hooded Sweatshirt Pullover for Men Women Adults Youth"
@@ -42,6 +45,7 @@ let all_products = [
         url: "https://m.media-amazon.com/images/I/71HfSU+gRjL._AC_UL1500_.jpg",
         title: "Hoodies Hooded Sweatshirt",
         price: 20,
+        currency: "dollar",
         star: 3,
         size: "M",
         description: "Pplicable Scenarios: Suitable For Daily Wear, Hanging Out, Traveling, Home Decoration, Etc. Suitable For Spring, Autumn Wear."
@@ -50,9 +54,10 @@ let all_products = [
         url: "https://m.media-amazon.com/images/I/81IiLQkW6dL._AC_UL1500_.jpg",
         title: "Homllyer Ripped Jeans",
         price: 20,
+        currency: "dollar",
         star: 2,
         size: "XL",
-        description: "The Homllyer Men’s Relaxed Fit Leg jean features the timeless five pocket design for a look that shines at the restaurant, work, or at home among family and friends."
+        description: "The Homllyer Men's Relaxed Fit Leg jean features the timeless five pocket design for a look that shines at the restaurant, work, or at home among family and friends."
     }
 ]
 
@@ -338,7 +343,7 @@ let addCart = (event) => {
 
 
 // ======= Call Function======
-// saveData(); 
+saveData(); 
 loadStorge();
 dispalyProduct();
 slideShow();

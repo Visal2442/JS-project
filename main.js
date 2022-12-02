@@ -69,6 +69,7 @@ let slide1_product=
                 }
                 ]
 
+
 // ====== Check if cart has no items =======
 let cart=JSON.parse(localStorage.getItem("cart"));
 if(cart.length== 0){
@@ -78,6 +79,9 @@ else{
     document.querySelector(".nb").textContent=cart.length;
     document.querySelector(".nb").style.display="";
 }
+
+// ====== Light mode =======
+
 
 // ===== Slide show ========
 let slideShow=()=>{
@@ -200,7 +204,7 @@ let showDetail=(event)=>{
 
 
 // ====== Call function ========
-slideShow()
+// slideShow()
 
 
 
