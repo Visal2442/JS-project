@@ -6,6 +6,7 @@ const product_detail = document.querySelector(".detail");
 const search_container = document.querySelector(".search_container");
 const slide1_container = document.querySelector(".slide1_container");
 const header= document.querySelector(".header");
+const mode=document.querySelector("#light");
 
 // ===== Variable ====
 let images = ["img1.jpg", "img-1.jpg"];
@@ -61,6 +62,11 @@ let all_products = [
     }
 ]
 
+// ====== Light mode =======
+let darkMode=()=>{
+    mode.classList.toggle("fa-toggle-on");
+}
+
 // ======= Slide show function =====
 let slideShow = () => {
     let image = "../../img/";
@@ -99,11 +105,11 @@ let loadStorge = () => {
     }
     //  ===== Check cart has items or not====
     if(cart.length== 0){
-        document.querySelector(".nb").style.display="none";
+        document.querySelector(".number").style.display="none";
     }
     else{
-        document.querySelector(".nb").textContent=cart.length;
-        document.querySelector(".nb").style.display="";
+        document.querySelector(".number").textContent=cart.length;
+        document.querySelector(".number").style.display="";
     }
 }
 
@@ -343,7 +349,7 @@ let addCart = (event) => {
 
 
 // ======= Call Function======
-saveData(); 
+// saveData(); 
 loadStorge();
 dispalyProduct();
 slideShow();

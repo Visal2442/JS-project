@@ -5,6 +5,7 @@ const slide2_container = document.querySelectorAll(".slide2_container");
 const product_detail=document.querySelector(".detail");
 const section=document.querySelector("section");
 const slide1_container=document.querySelector(".slide1_container");
+const mode=document.querySelector("#light");
 
 
 // ===== Variable====
@@ -73,14 +74,18 @@ let slide1_product=
 // ====== Check if cart has no items =======
 let cart=JSON.parse(localStorage.getItem("cart"));
 if(cart.length== 0){
-    document.querySelector(".nb").style.display="none";
+    document.querySelector(".number").style.display="none";
 }
 else{
-    document.querySelector(".nb").textContent=cart.length;
-    document.querySelector(".nb").style.display="";
+    document.querySelector(".number").textContent=cart.length;
+    document.querySelector(".number").style.display="";
 }
 
 // ====== Light mode =======
+let darkMode=()=>{
+    mode.classList.toggle("fa-toggle-on");
+    document.body.classList.toggle("dark");
+}
 
 
 // ===== Slide show ========

@@ -8,6 +8,7 @@ const currency = document.querySelector("#currency");
 const img_product = document.querySelector("#image");
 const more_info = document.querySelector("#more_info");
 const btn_dialog = document.querySelector(".btn_dialog");
+const mode=document.querySelector("#light");
 
 // ========== Get all products from local storage=====
 let all_products = JSON.parse(localStorage.getItem("products"))
@@ -22,6 +23,11 @@ let loadStorge = () => {
     if (product_storage != null) {
         all_products = product_storage;
     }
+}
+
+// ====== Light mode =======
+let darkMode=()=>{
+    mode.classList.toggle("fa-toggle-on");
 }
 
 // ====== Hide function=====

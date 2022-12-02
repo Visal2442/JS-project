@@ -1,16 +1,17 @@
 // ======= DOM HTML =======
 const tbody=document.querySelector("tbody");
+const mode=document.querySelector("#light");
 
 // ========= Get all products from local storage =======
 let cart=JSON.parse(localStorage.getItem("cart"));
 
 // ======= Check whether in cart has items or not =====
 if(cart.length== 0){
-    document.querySelector(".nb").style.display="none";
+    document.querySelector(".number").style.display="none";
 }
 else{
-    document.querySelector(".nb").textContent=cart.length;
-    document.querySelector(".nb").style.display="";
+    document.querySelector(".number").textContent=cart.length;
+    document.querySelector(".number").style.display="";
 }
 
 
@@ -19,6 +20,10 @@ let saveCart=()=>{
     localStorage.setItem("cart",JSON.stringify(cart));
 }
 
+// ====== Light mode =======
+let darkMode=()=>{
+    mode.classList.toggle("fa-toggle-on");
+}
 
 // ======= Display cart function =======
 let displayCart=()=>{
