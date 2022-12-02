@@ -23,10 +23,9 @@
 
 
 
-/* body{
-    height: 100vh;
-    background: none;
-} */
+html {
+    height: 100%;
+}
 
 a{
     text-decoration: none;
@@ -40,22 +39,27 @@ a{
                                     /* HOME PAGE */
 /* ================================================================ */
 .container{
-    background-image: url("../img/bg_1.jpg");
     height: 100%;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
+.bg1{
+    background-image: url("../img/bg_1.jpg");
+}
+.bg2{
+    background-image: url("../img/bg_2.jpg");
+}
 
 /* =====NAV BAR====== */
 .nav_bar{
-    /* background:rgb(243, 243, 243, 0.9); */
+    background:rgb(243, 243, 243);
     /* box-shadow: 0 2px 5px #b5b4b4; */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* position:sticky;  */
+    position:sticky; 
     top: 0;
     z-index: 5; 
     padding: 5px 50px;
@@ -103,7 +107,7 @@ a{
 
 /* ====== SLIDE SHOW 2 & 3===== */
 .slide2_container{
-    margin-top: 50px;
+    margin: 100px 0;
 }
 .slide2_container .slide_top{
     display: flex;
@@ -277,11 +281,12 @@ input[type="search"]{
 }
 
 table{
+    background: var(--main-color);
     width: 90%;
     margin: 20px auto;
 }
 table, th, td{
-    border: 1px solid var(--btn-border-color);
+    border: 1px solid rgb(185, 181, 181) ;
     border-collapse: collapse;
 }
 th, td{
