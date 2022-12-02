@@ -43,7 +43,7 @@ a{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position:sticky;
+    position:sticky; 
     top: 0;
     z-index: 2;
     padding: 5px 50px;
@@ -187,7 +187,6 @@ section{
     display: flex;  
     align-items: center;
     justify-content: space-evenly;
-    /* margin: 30px 10px; */
     padding: var(--main-padding);
 }
 
@@ -195,9 +194,7 @@ section{
 .section_left h1{
     font-size: xxx-large;
 }
-/* .section{
-    margin-top: 10px;
-} */
+
 section button{
     padding: var(--btn-padding);
 }
@@ -337,9 +334,7 @@ dialog .input select{
     border: 1px solid var(--btn-border-color);
     outline: none;
 }
-dialog .input select{
-    padding: 5px;
-}
+
 textarea{
     resize: none;
     border-radius: 10px;
@@ -408,16 +403,78 @@ thead{
     gap: 10px;
 }
 .btn_buy button a{
-    color: #ffffff;
+    color: #fff;
 }
 
 .btn_delete_cart button:last-child{
     background: var(--btn-delete-bg);
 }
 
-
-/* ===== Check out form ==== */
-
+/* ======= Form checkout===== */
+.modal{
+    width: 100%;
+    height: 100vh;
+    background: rgb(0, 0, 0, 0.5);
+    display: none; 
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+.checkout_container {
+    background: var(--bg-footer);
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    margin: 8rem auto;
+    padding: 20px 50px;
+    border-radius: var(--main-radius);
+    z-index: 2;
+}
+.checkout_left{
+    flex: 2;
+}
+.checkout_left img{
+    width: 300px;
+    margin-top: 50px;
+}
+.checkout_right h1{
+    text-align: center;
+    font-size: xx-large;
+}
+.credit{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+.credit input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+.expiration{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+.cards{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+    font-size:x-large;
+}
+.btn_checkout button{
+    width: 100%;
+}
+.fa-times{
+    position: absolute;
+    top: 3%;
+    left: 2%;
+}
 
 
 

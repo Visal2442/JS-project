@@ -175,6 +175,9 @@ let checkCurrency = (currency, price) => {
     if(currency==="pound"){
         return price * 1.21;
     }
+    else {
+        return price;
+    }
 }
 
 // ====== Reset input======

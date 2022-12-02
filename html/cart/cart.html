@@ -75,16 +75,55 @@
                     <p>Discount: <b>$0</b></p>
                 </div>
                 <div class="btn_buy card_button">
-                    <button type="button">Buy Now</button>
-                    <button type="button"><a href="../store/store.html"> Continue Shopping</a></button>
+                    <button type="button" onclick="checkOut()">CHECKOUT</button>
+                    <button type="button"><a href="../store/store.html"> CONTINUE SHOPPING</a></button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- ====== Check out form ===== -->
-    <div class="checkout_container">
-
+    <div class="modal">
+        <div class="checkout_container">
+            <div class="checkout_left">
+                <img src="../../img/credit_card.png" alt="Credit Card">
+            </div>
+            <div class="checkout_right">
+                <h1>Checkout Here</h1>
+                <div class="cards">
+                    <i class="fa fa-cc-visa" style="color: darkblue;"></i>
+                    <i class="fa fa-cc-amex" style="color:blue;"></i>
+                    <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                    <i class="fa fa-cc-discover" style="color:orange;"></i>
+                </div>
+                <div class="credit_name credit">
+                    <label for="name">Name on Card</label>
+                    <input type="text" name="name" id="credit_name">
+                </div>
+                <div class="address credit">
+                    <label for="address">Address</label>
+                    <input type="text" id="adddress">
+                </div>
+                <div class="credit_number credit">
+                    <label for="number">Credit Card Number</label>
+                    <input type="number" id="credit_number">
+                </div>
+                <div class="expiration">
+                    <div class="make_month credit">
+                        <label for="make">Make Month</label>
+                        <input type="number" name="make" id="make">
+                    </div>
+                    <div class="exp_month credit">
+                        <label for="expire">Expire Month</label>
+                        <input type="number" name="exp" id="expire">
+                    </div>
+                </div>
+                <div class="btn_checkout card_button">
+                    <button type="button">Purchase</button>
+                </div>
+            </div>
+            <i class="fa fa-times" style="font-size: 30px;" onclick=""></i>
+        </div>
     </div>
     
     

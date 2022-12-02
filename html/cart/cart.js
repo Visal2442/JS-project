@@ -1,6 +1,7 @@
 // ======= DOM HTML =======
 const tbody=document.querySelector("tbody");
 const mode=document.querySelector("#light");
+const modal=document.querySelector(".modal");
 
 // ========= Get all products from local storage =======
 let cart=JSON.parse(localStorage.getItem("cart"));
@@ -111,5 +112,9 @@ let deleteCart=(event)=>{
     location.reload();
 }
 
+// ======= Check Out =====
+let checkOut=()=>{
+    modal.style.display="block";
+}
 // ======== Call functions ========
 displayCart();
