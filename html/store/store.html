@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="container bg1 ">
+    <div class="container ">
         <!-- ====NAV BAR====== -->
         <div class="nav_bar">
             <div class="nav_left">
@@ -27,33 +27,38 @@
             </div>
             <i id="light" class="fa fa-toggle-off" onclick="darkMode()"></i>
         </div>
-
-         <!-- =====SLIDE SHOW 1 =====-->
-         <div class="slide1_container">
-            <img id="slide">
-        </div>
-        
-        <h1 class="header">All Products</h1>
-        <!-- ======= Search====== -->
-        <div class="search_container">
-            <select name="price" id="price" onchange="sort()">
-                <option disabled selected>Sort by price</option>
-                <option value="all">All products</option>
-                <option value="$10">$10</option>
-                <option value="$20">$20</option>
-                <option value="$30">$30</option>
-                <option value="$40">$40</option>
-                <option value="$30">$30</option>
-                <option value="$50">$50</option>
-                <option value="$100">$100</option>
-                <option value="$200">$200</option>
-                <option value="$500">$500</option>
-                <option value="$1000">$1000</option>
-                <option value="$2000">$2000</option>
-            </select>
-            <div class="search_input">
-                <input type="search" name="search" id="search" onkeyup="search()" placeholder="Search product here..">
+         
+         <!-- ======= Search====== -->
+         <div class="store_banner">
+            <img src="../../img/bg_2.jpg" id="slide" >
+             <div class="banner_text">
+                <h1>E-Shop</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, cupiditate at quam dolorem voluptatum unde aspernatur consectetur nostrum repellat laudantium soluta omnis ratione itaque aliquid consequuntur dolorum, in deleniti quo!</p>
+             </div>
+           
+            <div class="search_container">
+                <div class="sort_container">
+                    <select name="price" id="price" onchange="sort()">
+                        <option disabled selected>Sort by price</option>
+                        <option value="all">All products</option>
+                        <option value="$10">$10</option>
+                        <option value="$20">$20</option>
+                        <option value="$30">$30</option>
+                        <option value="$40">$40</option>
+                        <option value="$30">$30</option>
+                        <option value="$50">$50</option>
+                        <option value="$100">$100</option>
+                        <option value="$200">$200</option>
+                        <option value="$500">$500</option>
+                        <option value="$1000">$1000</option>
+                        <option value="$2000">$2000</option>
+                    </select>
+                    <div class="search_input">
+                        <input type="search" name="search" id="search" onkeyup="search()" placeholder="Search product here..">
+                    </div>
+                </div>
             </div>
+            <h1 class="header">All Products</h1>
         </div>
 
         <!-- ===== All products =====-->

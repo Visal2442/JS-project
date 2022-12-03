@@ -9,14 +9,12 @@ const header= document.querySelector(".header");
 const mode=document.querySelector("#light");
 
 // ===== Variable ====
-let images = ["img1.jpg", "img-1.jpg"];
-let count_img = 0;
 let cart=[];
 // ====== Data =====
 
 let all_products = [
     {
-        url: "https://m.media-amazon.com/images/I/61cjcbDKXoL._AC_UY879_.jpg",
+        url: "../../img/pant1.png",
         title: "Jordan 9999",
         price: 40,
         currency: "dollar",
@@ -25,7 +23,7 @@ let all_products = [
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
     },
     {
-        url: "https://m.media-amazon.com/images/I/71HJma0PdFL._AC_UX695_.jpg",
+        url: "../../img/jacket1.png",
         title: "Nike 6666",
         price: 20,
         currency: "dollar",
@@ -34,7 +32,7 @@ let all_products = [
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
     },
     {
-        url: "https://m.media-amazon.com/images/I/711L-j52ggL._AC_UL1500_.jpg",
+        url: "../../img/jacket2.png",
         title: "Hoodies Hooded Sweatshirt",
         price: 40,
         currency: "dollar",
@@ -43,7 +41,7 @@ let all_products = [
         description: "Unisex Christmas Hoodie 3D Printed Cosplay Hoodies Hooded Sweatshirt Pullover for Men Women Adults Youth"
     },
     {
-        url: "https://m.media-amazon.com/images/I/71HfSU+gRjL._AC_UL1500_.jpg",
+        url: "../../img/jacket3.png",
         title: "Hoodies Hooded Sweatshirt",
         price: 20,
         currency: "dollar",
@@ -52,11 +50,29 @@ let all_products = [
         description: "Pplicable Scenarios: Suitable For Daily Wear, Hanging Out, Traveling, Home Decoration, Etc. Suitable For Spring, Autumn Wear."
     },
     {
-        url: "https://m.media-amazon.com/images/I/81IiLQkW6dL._AC_UL1500_.jpg",
+        url: "../../img/pant2.png",
         title: "Homllyer Ripped Jeans",
         price: 20,
         currency: "dollar",
         star: 2,
+        size: "XL",
+        description: "The Homllyer Men's Relaxed Fit Leg jean features the timeless five pocket design for a look that shines at the restaurant, work, or at home among family and friends."
+    },
+    {
+        url: "../../img/whiteJacket.png",
+        title: "Homllyer Ripped Jeans",
+        price: 50,
+        currency: "dollar",
+        star: 4,
+        size: "XL",
+        description: "The Homllyer Men's Relaxed Fit Leg jean features the timeless five pocket design for a look that shines at the restaurant, work, or at home among family and friends."
+    },
+    {
+        url: "../../img/shoe1.png",
+        title: "Air Jordan 1 Retro",
+        price: 200,
+        currency: "dollar",
+        star: 4,
         size: "XL",
         description: "The Homllyer Men's Relaxed Fit Leg jean features the timeless five pocket design for a look that shines at the restaurant, work, or at home among family and friends."
     }
@@ -65,23 +81,6 @@ let all_products = [
 // ====== Light mode =======
 let darkMode=()=>{
     mode.classList.toggle("fa-toggle-on");
-}
-
-// ======= Slide show function =====
-let slideShow = () => {
-    let image = "../../img/";
-    image += images[count_img];
-    img.src = image;
-    img.style.transform = "translateX(-180deg)";
-    img.style.transition = "all 0.5s"
-
-    if (count_img < images.length - 1) {
-        count_img++;
-    }
-    else {
-        count_img = 0;
-    }
-    setTimeout("slideShow()", 1000);
 }
 
 
@@ -352,7 +351,7 @@ let addCart = (event) => {
 // saveData();  
 loadStorge();
 dispalyProduct();
-slideShow();
+// slideShow();
 
 
 

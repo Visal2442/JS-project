@@ -2,7 +2,7 @@
 
 :root {
     --main-color: #fcfffcd1;
-    --bg-footer:#d6d3d3;
+    --bg-footer:#f3f3f3;
     --text-color: #000000;
     --btn-delete-bg: #e42525;
     --btn-primary-bg: #000000;
@@ -13,15 +13,12 @@
     --font: 'Signika Negative', sans-serif;
 }
 
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: var(--font)
 }
-
-
 
 html {
     height: 100%;
@@ -39,17 +36,12 @@ a{
                                     /* HOME PAGE */
 /* ================================================================ */
 .container{
+    /* background-image: url("../img/bg_2.jpg"); */
     height: 100%;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-.bg1{
-    background-image: url("../img/bg_1.jpg");
-}
-.bg2{
-    background-image: url("../img/bg_2.jpg");
 }
 
 /* =====NAV BAR====== */
@@ -94,15 +86,9 @@ a{
 .dark{
     background: rgba(5, 4, 4, 0.9);
 }
-/* ====== SLIDE SHOW 1===== */
-.slide1_container{
-    width: 100%;
-}
-.slide1_container img{
-    width: 100%;
-    height: 500px;
-    /* object-fit: contain; */
-}
+
+
+
 
 
 /* ====== SLIDE SHOW 2 & 3===== */
@@ -110,31 +96,33 @@ a{
     margin: 100px 0;
 }
 .slide2_container .slide_top{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     font-weight: bold;
     margin-top: 20px;
     padding: var(--main-padding);
 }
 .slide2_container .slide_top p{
+    text-align: end;
     cursor: pointer;
+    font-size: larger;
+}
+.slide_top h1{
+    text-align: center;
 }
 
 .card_container{
-    background:rgb(243, 243, 243, 0.9);
+    /* background:rgb(243, 243, 243, 0.9); */
     display: flex;
-    gap: 30px;
+    gap: 20px;
     flex-wrap: wrap;
     position: relative;
     padding: 20px 75px;
 }
 .card{
-    /* background: var(--main-color); */
+    background: var(--main-color);
     border-radius: var(--main-radius);
-    /* box-shadow: 0 1px 5px rgba(188, 174, 174, 0.5); */
+    box-shadow: 0 1px 5px rgba(188, 174, 174, 0.5);
     padding: 10px;
-    transition: 2s;
+    transition: 1.5s;
 }
 .card:hover{
     box-shadow: 0 1px 5px rgb(188, 186, 186);
@@ -198,20 +186,28 @@ a{
     right: 2%;
 }
 
-/* =========== Section===== */
-section{
-    background:rgb(243, 243, 243, 0.9);
+/* =========== Banner ===== */
+.banner{
+    background:var(--bg-footer);
     display: flex;  
     align-items: center;
     justify-content: space-evenly;
     padding: var(--main-padding);
 }
-
-.section_left h1{
-    font-size: xxx-large;
+.banner_left{
+    margin-left: 4%;
 }
-
-section button{
+.banner_right{
+    margin-left: 10%;
+}
+.banner_right img{
+    width: 600px;   
+}
+.banner_left h1{
+    font-size: 70px;
+}
+.banner button{
+    margin-top: 10px;
     padding: var(--btn-padding);
 }
 
@@ -219,11 +215,38 @@ section button{
 /* ================================================================ */
                                     /* STORE PAGE */
 /* ================================================================ */
+
+/* ====== Store banner ===== */
+.store_banner{
+    background: rgb(0, 0, 0);
+    position: relative;
+    width: 100%;
+}
+.store_banner img{
+    width: 100%;
+    height: 600px;
+    filter: opacity(50%);
+    object-fit: cover;
+}
+.banner_text{
+    width: 50%;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    color: #fff;
+}
+.banner_text h1{
+    text-align: center;
+    font-size: 150px;
+}
 .search_container{
+    background: #fff;
+    width: 100%;
+}
+.sort_container{
+    width: 60%;
     display: flex;
-    margin-top: 20px;
-    width: 90%;
-    margin: 20px auto;
+    margin: auto;
 }
 .search_input{
     display: flex;
@@ -233,6 +256,7 @@ section button{
     border-radius: 10px;
     outline: none;
     border-radius: 10px 0 0 10px;
+    margin: 30px 0;
 }
 input[type="search"]{
     width: 100%;
@@ -240,6 +264,7 @@ input[type="search"]{
     border-radius: 0 10px 10px 0;
     outline: none;
     border: 1px solid #000;
+    margin: 30px 0;
 }
 
 .detail{
@@ -264,10 +289,9 @@ input[type="search"]{
     gap: 10px;
 }
 .header{
-    margin: 2% 5%;
-}
-.slide_top h1{
-    color:#fff;
+    background: #fff;
+    /* margin: 2% 0; */
+    text-align: center;
 }
 
 

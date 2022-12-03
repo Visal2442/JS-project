@@ -1,10 +1,10 @@
 
 // =====DOM HTML ====
 const img=document.querySelector("#slide");
+const slide1_container=document.querySelector(".slide1_container");
 const slide2_container = document.querySelectorAll(".slide2_container");
 const product_detail=document.querySelector(".detail");
-const section=document.querySelector("section");
-const slide1_container=document.querySelector(".slide1_container");
+const banner=document.querySelector(".banner");
 const mode=document.querySelector("#light");
 
 
@@ -85,24 +85,6 @@ else{
 let darkMode=()=>{
     mode.classList.toggle("fa-toggle-on");
     document.body.classList.toggle("dark");
-    document.querySelector("#section").classList.toggle("dark");
-}
-
-
-// ===== Slide show ========
-let slideShow=()=>{
-    let image="img/";
-    image+=images[count_img];
-    img.src=image;
-    img.style.transition="all 0.5s"
-
-    if(count_img< images.length-1){
-        count_img++;
-    }
-    else{
-        count_img=0
-    }
-    setTimeout("slideShow()", 1000);
 }
 
 // =======Hide function=====
@@ -120,8 +102,7 @@ let showDetail=(event)=>{
     let index=event.target.parentElement.parentElement.parentElement.dataset.index;
     hide(slide2_container[0]);
     hide(slide2_container[1]);
-    hide(section);
-    // hide(slide1_container);
+    hide(banner);
 
     // create div img
     let div_img=document.createElement("div");
