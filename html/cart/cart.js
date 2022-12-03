@@ -9,7 +9,7 @@ const login=document.querySelector(".form_container");
 let cart=JSON.parse(localStorage.getItem("cart"));
 
 // ======= Check whether in cart has items or not =====
-if(cart.length== 0){
+if(cart.length == 0){
     document.querySelector(".number").style.display="none";
     empty_cart.style.display="block";
 }
@@ -134,6 +134,7 @@ let hideCheckOut=()=>{
 let showLogin=()=>{
     login.style.display="block";
 }
+
 let hideLogin=()=>{
     login.style.display="none";
 }
