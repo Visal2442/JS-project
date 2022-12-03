@@ -111,7 +111,7 @@ let showDetail=(event)=>{
     hide(slide2_container[1]);
     hide(banner);
 
-    // create div img
+    // create div_img
     let div_img=document.createElement("div");
     div_img.className="img";
     

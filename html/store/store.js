@@ -89,7 +89,7 @@ let all_products = [
     {
         url: "../../img/shoe6.png",
         title: "Air Jordan 1 Mid SE",
-        price: 2000000,
+        price: 2000,
         currency: "KHM",
         star: 5,
         size: "L",
@@ -374,7 +374,7 @@ let hideLogin=()=>{
 }
 
 // ======= Call Function====== 
-// saveData();
+saveData();
 loadStorge();
 dispalyProduct();
 

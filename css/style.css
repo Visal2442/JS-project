@@ -100,7 +100,6 @@ a{
 }
 
 .card_container{
-    /* background:rgb(243, 243, 243, 0.9); */
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
@@ -185,6 +184,7 @@ a{
 }
 .banner_right img{
     width: 600px;   
+    /* margin-top: -60px; */
 }
 .banner_left h1{
     font-size: 70px;
@@ -196,7 +196,7 @@ a{
 
 
 /* ================================================================ */
-                                    /* STORE PAGE */
+                                /* STORE PAGE */
 /* ================================================================ */
 
 /* ====== Store banner ===== */

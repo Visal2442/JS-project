@@ -120,6 +120,7 @@ let addProduct = () => {
     let newProduct = {};
     let isTrue=true;
 
+    // ==== Get value from input ===========
     let name_product = document.querySelector("#name");
     let more_info = document.querySelector("#more_info");
     let price_product = document.querySelector("#price");
@@ -127,7 +128,7 @@ let addProduct = () => {
     let img_product = document.querySelector("#image");
     let size = document.querySelector("#size");
 
-    // ==== Get value from input ===========
+    // ====== Add new value to new product =======
     newProduct.url = img_product.value;
     newProduct.title = name_product.value;
     newProduct.currency = currency.value;
