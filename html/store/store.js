@@ -4,9 +4,10 @@ const img = document.querySelector("#slide");
 const card_container = document.querySelector(".card_container");
 const product_detail = document.querySelector(".detail");
 const search_container = document.querySelector(".search_container");
-const slide1_container = document.querySelector(".slide1_container");
+const store_banner=document.querySelector(".store_banner");
 const header= document.querySelector(".header");
 const mode=document.querySelector("#light");
+const login=document.querySelector(".form_container");
 
 // ===== Variable ====
 let cart=[];
@@ -17,7 +18,7 @@ let all_products = [
         url: "../../img/pant1.png",
         title: "Jordan 9999",
         price: 40,
-        currency: "dollar",
+        currency: "USD",
         star: 5,
         size: "M",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
@@ -26,7 +27,7 @@ let all_products = [
         url: "../../img/jacket1.png",
         title: "Nike 6666",
         price: 20,
-        currency: "dollar",
+        currency: "USD",
         star: 3,
         size: "L",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
@@ -35,7 +36,7 @@ let all_products = [
         url: "../../img/jacket2.png",
         title: "Hoodies Hooded Sweatshirt",
         price: 40,
-        currency: "dollar",
+        currency: "USD",
         star: 5,
         size: "L",
         description: "Unisex Christmas Hoodie 3D Printed Cosplay Hoodies Hooded Sweatshirt Pullover for Men Women Adults Youth"
@@ -44,7 +45,7 @@ let all_products = [
         url: "../../img/jacket3.png",
         title: "Hoodies Hooded Sweatshirt",
         price: 20,
-        currency: "dollar",
+        currency: "USD",
         star: 3,
         size: "M",
         description: "Pplicable Scenarios: Suitable For Daily Wear, Hanging Out, Traveling, Home Decoration, Etc. Suitable For Spring, Autumn Wear."
@@ -53,7 +54,7 @@ let all_products = [
         url: "../../img/pant2.png",
         title: "Homllyer Ripped Jeans",
         price: 20,
-        currency: "dollar",
+        currency: "USD",
         star: 2,
         size: "XL",
         description: "The Homllyer Men's Relaxed Fit Leg jean features the timeless five pocket design for a look that shines at the restaurant, work, or at home among family and friends."
@@ -62,7 +63,7 @@ let all_products = [
         url: "../../img/whiteJacket.png",
         title: "Homllyer Ripped Jeans",
         price: 50,
-        currency: "dollar",
+        currency: "USD",
         star: 4,
         size: "XL",
         description: "The Homllyer Men's Relaxed Fit Leg jean features the timeless five pocket design for a look that shines at the restaurant, work, or at home among family and friends."
@@ -71,20 +72,37 @@ let all_products = [
         url: "../../img/shoe1.png",
         title: "Air Jordan 1 Retro",
         price: 200,
-        currency: "dollar",
+        currency: "USD",
         star: 4,
         size: "XL",
+        description: "The Homllyer Men's Relaxed Fit Leg jean features the timeless five pocket design for a look that shines at the restaurant, work, or at home among family and friends."
+    },
+    {
+        url: "../../img/shoe5.png",
+        title: "Air Jordan 4 'Fire Red' 2020",
+        price: 720,
+        currency: "USD",
+        star: 5,
+        size: "XL",
+        description: "The Homllyer Men's Relaxed Fit Leg jean features the timeless five pocket design for a look that shines at the restaurant, work, or at home among family and friends."
+    },
+    {
+        url: "../../img/shoe6.png",
+        title: "Air Jordan 1 Mid SE",
+        price: 2000000,
+        currency: "KHM",
+        star: 5,
+        size: "L",
         description: "The Homllyer Men's Relaxed Fit Leg jean features the timeless five pocket design for a look that shines at the restaurant, work, or at home among family and friends."
     }
 ]
 
-// ====== Light mode =======
+// ====== Dark mode =======
 let darkMode=()=>{
     mode.classList.toggle("fa-toggle-on");
 }
 
-
-// =======Local Storge=======
+// ======= Local Storge =======
 let saveData = () => {
     localStorage.setItem("products", JSON.stringify(all_products));
 }
@@ -102,8 +120,12 @@ let loadStorge = () => {
     if (cart_storage !== null) {
         cart = cart_storage;
     }
-    //  ===== Check cart has items or not====
-    if(cart.length== 0){
+    checkCartItem();
+}
+
+//  ===== Check cart has items or not====
+let checkCartItem=()=>{
+     if(cart.length== 0){
         document.querySelector(".number").style.display="none";
     }
     else{
@@ -116,7 +138,7 @@ let loadStorge = () => {
 // ======= Display products =======
 let dispalyProduct = () => {
 
-    for (index in all_products) {
+    for (let index=0; index < all_products.length; index++) {
         // card 
         let card = document.createElement("div");
         card.className = "card";
@@ -150,11 +172,11 @@ let dispalyProduct = () => {
         card_rate.className = "card_rate";
         // span 
         let star = all_products[index].star;
-        for (i = 0; i < star; i++) {
-            let i = document.createElement("i");
-            i.className = "fa fa-star";
+        for (let i = 0; i < star; i++) {
+            let icon = document.createElement("i");
+            icon.className = "fa fa-star";
             // appendChild to card_rate
-            card_rate.appendChild(i);
+            card_rate.appendChild(icon);
         }
         // card_button 
         let card_button = document.createElement("div");
@@ -180,7 +202,7 @@ let dispalyProduct = () => {
 }
 
 
-// ======= Search function=====
+// ======= Search Product =====
 let search = () => {
     let cards = document.querySelectorAll(".card");
     let input = document.querySelector("#search").value.toLowerCase();
@@ -197,14 +219,14 @@ let search = () => {
     }
 }
 
-// ======== Sort product ====
+// ======== Sort product =====
 let sortCost=(price)=>{
     let cards = document.querySelectorAll(".card");
     for (let i = 0; i < cards.length; i++) {
         let card_footer = cards[i].lastElementChild;
         let card_title = card_footer.firstElementChild;
-        let cost=card_title.lastElementChild.textContent;
-        if(cost===price || price==="all"){
+        let cost=card_title.lastElementChild.textContent.trim();
+        if(Number(cost.substring(1)) <= price  || price===0){
             cards[i].style.display = "";
         }
         else{
@@ -215,15 +237,15 @@ let sortCost=(price)=>{
 
 let sort=()=>{
     let price=document.querySelector("#price").value;
-    sortCost(price)
+    sortCost(Number(price));
 }
 
-// =======Hide function=====
+// =======Hide function ======
 let hide = (element) => {
     element.style.display = "none";
 }
 
-// =======Show function=====
+// =======Show function =======
 let show = (element) => {
     element.style.display = "";
 }
@@ -232,8 +254,8 @@ let show = (element) => {
 let showDetail = (event) => {
     hide(card_container);
     hide(search_container);
-    hide(slide1_container);
     hide(header);
+    hide(store_banner);
     let index = event.target.parentElement.parentElement.parentElement.dataset.index;
 
     // create div img
@@ -261,10 +283,10 @@ let showDetail = (event) => {
     let img_rate = document.createElement("div");
     img_rate.className = "img_rate";
     let star = all_products[index].star;
-    for (i = 0; i < star; i++) {
-        let i = document.createElement("i");
-        i.className = "fa fa-star";
-        img_rate.appendChild(i);
+    for (let i=0; i < star; i++) {
+        let icon = document.createElement("i");
+        icon.className = "fa fa-star";
+        img_rate.appendChild(icon);
     }
     img_detail.appendChild(img_rate);
 
@@ -321,12 +343,10 @@ let showDetail = (event) => {
     show(product_detail);
 }
 
-
-// ======= Hide detail ====
+// ======= Hide detail ======
 let hideDetail=()=>{
     location.reload();
 }
-
 
 // ======= Add product to cart function =======
 let addCart = (event) => {
@@ -334,7 +354,6 @@ let addCart = (event) => {
     let index = event.target.parentElement.parentElement.dataset.index;
     // Add to newCart
     newCart=all_products[index];
-
     if (typeof(cart) == "object") {
         cart.push(newCart);
         saveCart();
@@ -346,12 +365,19 @@ let addCart = (event) => {
     location.reload();   
 }
 
+// ======= LOGIN ====
+let showLogin=()=>{
+    login.style.display="block";
+}
+let hideLogin=()=>{
+    login.style.display="none";
+}
 
-// ======= Call Function======
-// saveData();  
+// ======= Call Function====== 
+// saveData();
 loadStorge();
 dispalyProduct();
-// slideShow();
+
 
 
 

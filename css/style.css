@@ -35,14 +35,6 @@ a{
 /* ================================================================ */
                                     /* HOME PAGE */
 /* ================================================================ */
-.container{
-    /* background-image: url("../img/bg_2.jpg"); */
-    height: 100%;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
 /* =====NAV BAR====== */
 .nav_bar{
@@ -74,8 +66,8 @@ a{
 }
 .number{
     position: absolute;
-    right: 43%;
-    top: 24%;
+    right: 39%;
+    top: 23%;
     font-size:x-large;
     color: red;
 }
@@ -86,8 +78,6 @@ a{
 .dark{
     background: rgba(5, 4, 4, 0.9);
 }
-
-
 
 
 
@@ -115,7 +105,7 @@ a{
     gap: 20px;
     flex-wrap: wrap;
     position: relative;
-    padding: 20px 75px;
+    padding: 20px 70px;
 }
 .card{
     background: var(--main-color);
@@ -177,14 +167,7 @@ a{
     font-size: xx-large;
     cursor: pointer;
 }
-.previous,
-.left{
-    left: 2%;
-}
-.next,
-.right{
-    right: 2%;
-}
+
 
 /* =========== Banner ===== */
 .banner{
@@ -290,7 +273,6 @@ input[type="search"]{
 }
 .header{
     background: #fff;
-    /* margin: 2% 0; */
     text-align: center;
 }
 
@@ -411,6 +393,13 @@ label{
     border-radius: var(--main-radius);
     box-shadow: 0 1px 10px rgb(175, 171, 171);
 }
+.empty{
+    position: absolute;
+    right: 50%;
+    top: 35%;
+    font-size: 40px;
+    display: none;
+}
 thead{
     border-bottom: 1px solid #000;
 }
@@ -450,7 +439,7 @@ thead{
     gap: 10px;
 }
 .btn_buy button a{
-    color: #fff;
+    color: #fff;    
 }
 
 .btn_delete_cart button:last-child{
@@ -474,12 +463,15 @@ thead{
     justify-content: space-evenly;
     align-items: center;
     position: relative;
-    margin: 8rem auto;
+    margin: 5rem auto;
     padding: 20px 50px;
     border-radius: var(--main-radius);
     z-index: 2;
 }
 .checkout_left{
+    flex: 1;
+}
+.checkout_right{
     flex: 2;
 }
 .checkout_left img{
@@ -502,11 +494,6 @@ thead{
     outline: none;
     border: none;
 }
-.expiration{
-    display: flex;
-    gap: 10px;
-    margin-bottom: 5px;
-}
 .cards{
     display: flex;
     justify-content: center;
@@ -516,6 +503,7 @@ thead{
 }
 .btn_checkout button{
     width: 100%;
+    margin-top: 5px;
 }
 .fa-times{
     position: absolute;
@@ -527,20 +515,28 @@ thead{
 
 
 /* ================================================================ */
-                                /* LOGIN PAGE */
+                                /* LOGIN FORM */
 /* ================================================================ */
 .form_container{
-    width: 30%;
-    margin: 3rem auto;
+    width: 100%;
+    height: 100vh;
+    background: rgb(0, 0, 0,0.5);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: none;
 }
 .form_container input{
     padding: 10px;
 }
 form{
+    width: 30%;
     background:rgb(252, 251, 251);
-    padding: 10px;
     box-shadow: 0 0 5px 1px rgb(187, 183, 183);
     border-radius: var(--main-radius);
+    padding: 10px;
+    margin: 10rem auto;
+    position: relative;
 }
 form h1{
     text-align: center;
@@ -549,7 +545,6 @@ form h1{
 .btn_login{
     width: 46%;
 }
-
 
 
 /* ======= Footer ====== */
@@ -573,6 +568,37 @@ footer{
     margin-right: 3px;
 }
 
+
+/* ================================================================ */
+                                /* RESPONSIVE */
+/* ================================================================ */
+
+@media screen and (max-width: 768px) {
+    /* ==== Home page ==== */
+    .banner{
+       flex-direction: column-reverse;
+       padding-bottom: 20px;
+    }
+    .banner_left,
+    .banner_right{
+        margin: 0;
+    }
+    .slide2_container .slide_top{
+        margin-top: 0px;
+    }
+
+    /* ======= Store page ==== */
+    .banner_text{
+        width: 70%;
+        left: 20%;
+    }
+    .banner_text h1{
+        font-size: 100px;
+    }
+    .header{
+        border: none;
+    }
+}
 
 
 

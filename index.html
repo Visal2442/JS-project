@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <div class="container bg1 ">
+    <div class="container">
         <!-- ====NAV BAR====== -->
         <div class="nav_bar">
             <div class="nav_left">
@@ -22,9 +22,9 @@
                     <div class="number"></div>
                     <li><a href="index.html" class="active">HOME</a></li>
                     <li><a href="html/store/store.html">STORE</a></li>
-                    <!-- <li><a href="html/seller/seller.html">SELLER</a></li> -->
+                    <li><a href="html/seller/seller.html">SELLER</a></li>
                     <li><a href="html/cart/cart.html">CART</a></li>
-                    <li><a href="html/login/login.html">SIGN UP</a></li>
+                    <li><a href="#" onclick="showLogin()">SIGN UP</a></li>
                 </ul>
             </div>
             <i id="light" class="fa fa-toggle-off" onclick="darkMode()"></i>
@@ -44,7 +44,7 @@
             </div>
         </div>
 
-        <!-- ===== SLIDE SHOW 2 ===== -->
+        <!-- ===== Clothes all collection ===== -->
         <div class="slide2_container">
             <div class="clothes">
                 <div class="slide_top">
@@ -61,7 +61,7 @@
                         <div class="card_footer">
                             <div class="card_title">
                                 <p class="title">Glennaker Rain Jacket</p>
-                                <p id="price">$30</p>
+                                <p id="price">$40</p>
                             </div>
                             <div class="card_rate">
                                 <span>&#9734;</span>
@@ -71,7 +71,7 @@
                                 <span>&#9734;</span>
                             </div>
                             <div class="card_button">
-                                <button type="button" onclick="showDetail(event)">Detail</button>
+                                <button type="button" onclick="showDetail()">Detail</button>
                                 <button type="button">Add cart</button>
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                                 <span>&#9734;</span>
                             </div>
                             <div class="card_button">
-                                <button type="button" onclick="showDetail(event)">Detail</button>
+                                <button type="button" onclick="showDetail()">Detail</button>
                                 <button type="button">Add cart</button>
                             </div>
                         </div>
@@ -105,7 +105,7 @@
                         <div class="card_footer">
                             <div class="card_title">
                                 <p class="title">Flannel Lined Jacket</p>
-                                <p id="price">$70</p>   
+                                <p id="price">$100</p>   
                             </div>
                             <div class="card_rate">
                                 <span>&#9734;</span>
@@ -115,7 +115,7 @@
                                 <span>&#9734;</span>
                             </div>
                             <div class="card_button">
-                                <button type="button" onclick="showDetail(event)">Detail</button>
+                                <button type="button" onclick="showDetail()">Detail</button>
                                 <button type="button">Add cart</button>
                             </div>
                         </div>
@@ -137,20 +137,14 @@
                                 <span>&#9734;</span>
                             </div>
                             <div class="card_button">
-                                <button type="button" onclick="showDetail(event)">Detail</button>
+                                <button type="button" onclick="showDetail()">Detail</button>
                                 <button type="button">Add cart</button>
                             </div>
                         </div>
                     </div>
-            <!-- ======Next and previous buttons====== -->
-                    <div class="previous">&#10094;</div>
-                    <div class="next">&#10095;</div>
                 </div>
             </div>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
         </div>
 
 
@@ -180,7 +174,7 @@
                                 <span>&#9734;</span>
                             </div>
                             <div class="card_button">
-                                <button type="button" onclick="showDetail(event)">Detail</button>
+                                <button type="button" onclick="showDetail()">Detail</button>
                                 <button type="button">Add cart</button>
                             </div>
                         </div>
@@ -191,8 +185,8 @@
                         </div>
                         <div class="card_footer">
                             <div class="card_title">
-                                <p class="title">Air Jordan 4 Retro 'Red Thunder' <br> Unisex Sweatheart</p>
-                                <p id="price">$30</p>
+                                <p class="title">Air Jordan 4 Retro 'Red Thunder'<br> Unisex Sweatheart</p>
+                                <p id="price">$350</p>
                             </div>
                             <div class="card_rate">
                                 <span>&#9734;</span>
@@ -202,7 +196,7 @@
                                 <span>&#9734;</span>
                             </div>
                             <div class="card_button">
-                                <button type="button" onclick="showDetail(event)">Detail</button>
+                                <button type="button" onclick="showDetail()">Detail</button>
                                 <button type="button">Add cart</button>
                             </div>
                         </div>
@@ -214,7 +208,7 @@
                         <div class="card_footer">
                             <div class="card_title">
                                 <p class="title">Air Jordan 1 Retro High OG NRG</p>
-                                <p id="price">$50</p>
+                                <p id="price">$400</p>
                             </div>
                             <div class="card_rate">
                                 <span>&#9734;</span>
@@ -224,7 +218,7 @@
                                 <span>&#9734;</span>
                             </div>
                             <div class="card_button">
-                                <button type="button" onclick="showDetail(event)">Detail</button>
+                                <button type="button" onclick="showDetail()">Detail</button>
                                 <button type="button">Add cart</button>
                             </div>
                         </div>
@@ -235,7 +229,7 @@
                         </div>
                         <div class="card_footer">
                             <div class="card_title">
-                                <p class="title">Air Jordan 1 Retro </p>
+                                <p class="title">Air Jordan 1 Retro</p>
                                 <p id="price">$200</p>
                             </div>
                             <div class="card_rate">
@@ -246,34 +240,46 @@
                                 <span>&#9734;</span>
                             </div>
                             <div class="card_button">
-                                <button type="button" onclick="showDetail(event)">Detail</button>
+                                <button type="button" onclick="showDetail()">Detail</button>
                                 <button type="button">Add cart</button>
                             </div>
                         </div>
                     </div>
-            <!-- ======Next and previous buttons====== -->
-                    <div class="left">&#10094;</div>
-                    <div class="right">&#10095;</div>
                 </div>
             </div>
         </div>
 
-          <!-- =====Section====== -->
-          <!-- <section>
-            <div class="section_left">
-                <h1>Jordan 1 Mid</h1>
-                <p>Inspired by the original AJ1, the Jordan 1 Mid is lightweight and supportive, great for younger kids still getting the hang of walking and running.</p>
-                <div class="card_button section">
-                    <button type="button">More Detail</button>
-                </div>
-            </div>
-            <div class="section_right">
-                <img src="img/airforceRed.png" alt="Air force red">
-            </div>
-        </section> -->
-
         <!-- =======Detail product===== -->
         <div class="detail" style="display: none;"></div>
+
+         <!-- ======= Form Login ==== -->
+         <div class="form_container">
+            <form action="../store/store.html">
+                <h1>SING UP</h1>
+                <div class="name">
+                    <div class="first_name input">
+                        <label for="name">First Name</label>
+                        <input type="text" id="first_name" placeholder="Type your firstname ...">
+                    </div>
+                    <div class="last_name input">
+                        <label for="name">Last Name</label>
+                        <input type="text" id="last_name" placeholder="Type your lastname ...">
+                    </div>
+                </div>
+                <div class="pwd input">
+                    <label for="pwd">Password</label>
+                    <input type="password" id="pwd" placeholder="Password ...">
+                </div>
+                <div class="confirm input">
+                    <label for="confirm">Confirm Your Password</label>
+                    <input type="password" id="confirm" placeholder="Confirm your password ...">
+                </div>
+                <div class="btn_login input card_button">
+                    <button type="button">Create Account</button>
+                </div>
+                <i class="fa fa-times" style="font-size: 30px;" onclick="hideLogin()"></i>
+            </form>
+        </div>
 
         <!-- ========= Footer ========== -->
         <footer>

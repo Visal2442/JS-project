@@ -21,9 +21,9 @@
                     <div class="number"></div>
                     <li><a href="../../index.html">HOME</a></li>
                     <li><a href="../store/store.html">STORE</a></li>
-                    <!-- <li><a href="html/seller/seller.html">SELLER</a></li> -->
+                    <li><a href="../seller/seller.html">SELLER</a></li>
                     <li><a href="cart.html" class="active">CART</a></li>
-                    <li><a href="../login/login.html">SIGN UP</a></li>
+                    <li><a href="#" onclick="showLogin()">SIGN UP</a></li>
                 </ul>
             </div>
             <i id="light" class="fa fa-toggle-off" onclick="darkMode()"></i>
@@ -39,33 +39,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- <tr>
-                            <td>
-                                <div class="name cart_name">
-                                    <img src="../../img/blackJacket.jpg">
-                                    <div class="cart_detail">
-                                        <h2>Black Jacket</h2>
-                                        <div class="rate">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <p>SIZE: L</p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <input type="number" min="1" max="100">
-                            </td>
-                            <td>$10</td>
-                            <td>
-                                <div class="btn_detail card_button btn_delete_cart">
-                                    <button type="button" class="delete">Delete</button>
-                                </div>
-                            </td>
-                        </tr> -->
+                        <h1 class="empty">Your Cart is Empty</h1>
                     </tbody>
                 </table>
     
@@ -99,25 +73,23 @@
                 </div>
                 <div class="credit_name credit">
                     <label for="name">Name on Card</label>
-                    <input type="text" name="name" id="credit_name">
+                    <input type="text" name="name" id="credit_name" placeholder="Sork Visal">
                 </div>
                 <div class="address credit">
                     <label for="address">Address</label>
-                    <input type="text" id="adddress">
+                    <input type="text" id="adddress" placeholder="Your Address">
+                </div>
+                <div class="phone credit">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
                 </div>
                 <div class="credit_number credit">
                     <label for="number">Credit Card Number</label>
-                    <input type="number" id="credit_number">
+                    <input type="number" id="credit_number" placeholder="0000 - 0000 - 0000 - 0000">
                 </div>
-                <div class="expiration">
-                    <div class="make_month credit">
-                        <label for="make">Make Month</label>
-                        <input type="number" name="make" id="make">
-                    </div>
-                    <div class="exp_month credit">
-                        <label for="expire">Expire Month</label>
-                        <input type="number" name="exp" id="expire">
-                    </div>
+                <div class="exp_month credit">
+                    <label for="expire">Exp Month / Year</label>
+                    <input type="number" name="exp" id="expire" placeholder="00 / 00">
                 </div>
                 <div class="btn_checkout card_button">
                     <button type="button">Purchase</button>
@@ -125,6 +97,35 @@
             </div>
             <i class="fa fa-times" style="font-size: 30px;" onclick="hideCheckOut()"></i>
         </div>
+    </div>
+
+      <!-- ======= Form Login ==== -->
+      <div class="form_container">
+        <form action="../store/store.html">
+            <h1>SING UP</h1>
+            <div class="name">
+                <div class="first_name input">
+                    <label for="name">First Name</label>
+                    <input type="text" id="first_name" placeholder="Type your firstname ...">
+                </div>
+                <div class="last_name input">
+                    <label for="name">Last Name</label>
+                    <input type="text" id="last_name" placeholder="Type your lastname ...">
+                </div>
+            </div>
+            <div class="pwd input">
+                <label for="pwd">Password</label>
+                <input type="password" id="pwd" placeholder="Password ...">
+            </div>
+            <div class="confirm input">
+                <label for="confirm">Confirm Your Password</label>
+                <input type="password" id="confirm" placeholder="Confirm your password ...">
+            </div>
+            <div class="btn_login input card_button">
+                <button type="button">Create Account</button>
+            </div>
+            <i class="fa fa-times" style="font-size: 30px;" onclick="hideLogin()"></i>
+        </form>
     </div>
     
     

@@ -2,6 +2,8 @@
 const tbody=document.querySelector("tbody");
 const mode=document.querySelector("#light");
 const modal=document.querySelector(".modal");
+const empty_cart=document.querySelector(".empty");
+const login=document.querySelector(".form_container");
 
 // ========= Get all products from local storage =======
 let cart=JSON.parse(localStorage.getItem("cart"));
@@ -9,10 +11,12 @@ let cart=JSON.parse(localStorage.getItem("cart"));
 // ======= Check whether in cart has items or not =====
 if(cart.length== 0){
     document.querySelector(".number").style.display="none";
+    empty_cart.style.display="block";
 }
 else{
     document.querySelector(".number").textContent=cart.length;
     document.querySelector(".number").style.display="";
+    empty_cart.style.display="none";
 }
 
 
@@ -114,11 +118,26 @@ let deleteCart=(event)=>{
 
 // ======= Show Check Out =====
 let checkOut=()=>{
-    modal.style.display="block";
+    if(cart.length===0){
+        alert("Your cart is empty")
+    }
+    else{
+        modal.style.display="block";
+    }
 }
 // ====== Hide checkOut =====
 let hideCheckOut=()=>{
     modal.style.display="none";
 }
+
+// ======= LOGIN ====
+let showLogin=()=>{
+    login.style.display="block";
+}
+let hideLogin=()=>{
+    login.style.display="none";
+}
+
+
 // ======== Call functions ========
 displayCart();

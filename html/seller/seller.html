@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container bg1">
-        <!-- ====NAV BAR====== -->
+        <!-- ==== NAV BAR ====== -->
         <div class="nav_bar">
             <div class="nav_left">
                 <img src="../../img/logo.png" alt="Logo">
@@ -21,7 +21,7 @@
                     <li><a href="../../index.html">HOME</a></li>
                     <li><a href="../store/store.html">STORE</a></li>
                     <li><a href="seller.html" class="active">SELLER</a></li>
-                    <!-- <li><a href="html/cart/cart.html">CART</a></li> -->
+                    <li><a href="../cart/cart.html">CART</a></li>
                     <li><a href="../login/login.html">SIGN UP</a></li>
                 </ul>
             </div>
@@ -40,30 +40,12 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <!-- <tr>
-                        <td>
-                            <div class="name">
-                                <img src="../../img/blackJacket.jpg" alt="">
-                                <h2>Black Jacket</h2>
-                            </div>
-                        </td>
-                        <td>$50</td>
-                        <td class="info">debitis recusandae Officia quia voluptatem ab, inventore debitis sunt assumenda.</td>
-                        <td>
-                            <div class="btn_detail card_button action">
-                                <button type="button">Edit</button>
-                                <button type="button" class="delete">Delete</button>
-                            </div>
-                        </td>
-                    </tr>    -->
-                </tbody>
+                <tbody></tbody>
             </table>
             <div class="card_button add">
                 <button type="button" onclick="onAdd()">Add Product</button>
             </div>
         </div>
-        
 
         <!-- ======= Dialog ===== -->
         <div class="dialog_container">
@@ -88,8 +70,9 @@
                     <label for="currency">Currency</label>
                     <select name="currency" id="currency">
                         <option disabled selected>Choose your currency ...</option>
-                        <option value="dollar">Dollar</option>
-                        <option value="pound">Pound</option>
+                        <option value="USD">Dollar</option>
+                        <option value="Pound">Pound</option>
+                        <option value="KHM">KHM</option>
                     </select>
                     <p class="error_currency error" style="display: none;">Choose Currency*</p>
                 </div>

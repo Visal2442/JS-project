@@ -6,64 +6,71 @@ const slide2_container = document.querySelectorAll(".slide2_container");
 const product_detail=document.querySelector(".detail");
 const banner=document.querySelector(".banner");
 const mode=document.querySelector("#light");
+const login= document.querySelector(".form_container");
 
 
 // ===== Variable====
-let images=["img1.jpg", "img-1.jpg"];
-let count_img=0;
-let slide1_product=
+let home_product=
                 [
                 {
-                    url: "img/airmax.png",
+                    url: "img/jacket1.png",
                     title: "Flannel Lined Jacket",
                     price: 40,
                     star: 5,
                     size: "XXL",
                     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
                 },
-                {   url:"http://127.0.0.1:49344/img/brownJacket.png",
+                {   url:"img/jacket3.png",
                     title:"Flannel Lined Jacket",
-                    price:40,
+                    price:70,
                     star:5,
                     size: "XXL",
                     description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
                 },
                 {
-                    url:"http://127.0.0.1:49344/img/colorful.png",
+                    url:"img/jacket2.png",
                     title:"Colorful Jacket",
+                    price:100,
+                    star: 5,
+                    size: "XL",
+                    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
+                },
+                {
+                    url:"img/whiteJacket.png",
+                    title:"White Man Jacket",
                     price:70,
                     star: 5,
                     size: "XL",
                     description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
                 },
                 {
-                    url:"https://m.media-amazon.com/images/I/61K4+FO8lDL._AC_UX679_.jpg",
-                    title:"Colorful Jacket",
-                    price:70,
+                    url:"img/shoe4.png",
+                    title:"WMNS Air Jordan 1 Mid",
+                    price:200,
                     star: 5,
                     size: "XL",
                     description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
                 },
                 {
-                    url:"https://m.media-amazon.com/images/I/61K4+FO8lDL._AC_UX679_.jpg",
-                    title:"Colorful Jacket",
-                    price:70,
+                    url:"img/shoe3.png",
+                    title:"Air Jordan 4 Retro 'Red Thunder'",
+                    price:350,
                     star: 5,
                     size: "XL",
                     description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
                 },
                 {
-                    url:"https://m.media-amazon.com/images/I/61K4+FO8lDL._AC_UX679_.jpg",
-                    title:"Colorful Jacket",
-                    price:70,
+                    url:"img/shoe2.png",
+                    title:"Air Jordan 1 Retro High OG NRG",
+                    price:400,
                     star: 5,
                     size: "XL",
                     description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
                 },
                 {
-                    url:"https://m.media-amazon.com/images/I/61K4+FO8lDL._AC_UX679_.jpg",
-                    title:"Colorful Jacket",
-                    price:70,
+                    url:"img/shoe1.png",
+                    title:"Air Jordan 1 Retro",
+                    price:200,
                     star: 5,
                     size: "XL",
                     description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo"
@@ -110,7 +117,7 @@ let showDetail=(event)=>{
     
     // create img 
     let img=document.createElement("img");
-    img.src=slide1_product[index].url;
+    img.src=home_product[index].url;
     
     // appendchild to div_img 
     div_img.appendChild(img);
@@ -121,13 +128,13 @@ let showDetail=(event)=>{
     
     // create h1
     let h1=document.createElement("h1");
-    h1.textContent=slide1_product[index].title;
+    h1.textContent=home_product[index].title;
     img_detail.append(h1);
     
     // create img_rate 
     let img_rate=document.createElement("div");
     img_rate.className="img_rate";
-    let star=slide1_product[index].star;
+    let star=home_product[index].star;
     for(i=0; i<star;i++){
         let i=document.createElement("i");
         i.className="fa fa-star";   
@@ -141,7 +148,7 @@ let showDetail=(event)=>{
     description.className="description";
     // create p 
     let p=document.createElement("p");
-    p.textContent=slide1_product[index].description;
+    p.textContent=home_product[index].description;
     // appendChild to description
     description.appendChild(p);
     img_detail.appendChild(description);
@@ -151,7 +158,7 @@ let showDetail=(event)=>{
      let bold1=document.createElement("b");
      bold1.textContent="Price: ";
      let span1=document.createElement("span");   
-     span1.textContent="$"+slide1_product[index].price;
+     span1.textContent="$"+home_product[index].price;
      price.append(bold1,span1);
      img_detail.appendChild(price);
  
@@ -160,7 +167,7 @@ let showDetail=(event)=>{
      let bold2=document.createElement("b");
      bold2.textContent="Size: ";
      let span2=document.createElement("span");
-     span2.textContent=slide1_product[index].size;
+     span2.textContent=home_product[index].size;
      size.append(bold2,span2);
      img_detail.appendChild(size);
  
@@ -189,9 +196,15 @@ let showDetail=(event)=>{
      show(product_detail);
 }
 
+// ======= LOGIN ====
+let showLogin=()=>{
+    login.style.display="block";
+}
+let hideLogin=()=>{
+    login.style.display="none";
+}
 
-// ====== Call function ========
-// slideShow()
+
 
 
 

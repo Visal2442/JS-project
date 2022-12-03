@@ -1,5 +1,5 @@
 
-// ========= DOM HTML ========
+// ============= DOM HTML ============
 const table = document.querySelector("table");
 const dialog_container = document.querySelector(".dialog_container");
 const name_product = document.querySelector("#name");
@@ -10,10 +10,10 @@ const more_info = document.querySelector("#more_info");
 const btn_dialog = document.querySelector(".btn_dialog");
 const mode=document.querySelector("#light");
 
-// ========== Get all products from local storage=====
+// ================== Get all products from local storage =========
 let all_products = JSON.parse(localStorage.getItem("products"))
 
-// ========== Local storage=====
+// ================== Local storage=========
 let saveData = () => {
     localStorage.setItem("products", JSON.stringify(all_products));
 }
@@ -25,28 +25,28 @@ let loadStorge = () => {
     }
 }
 
-// ====== Light mode =======
+// ========== Light mode ===========
 let darkMode=()=>{
     mode.classList.toggle("fa-toggle-on");
 }
 
-// ====== Hide function=====
+// ========== Hide function=========
 let hide = (element) => {
     element.style.display = "none";
 }
-// ====== Show function =====
+// ========== Show function =========
 let show = (element) => {
     element.style.display = "block";
 }
 
-// =========== Display product for seller =======
+// =================== Display product for seller ===========
 let displaySellerProduct = () => {
     document.querySelector("tbody").remove();
     let tbody = document.createElement("tbody");
     for (let index in all_products) {
         let tr = document.createElement("tr");
         tr.dataset.index = index;
-        // ===== create td 1=====
+        // ========= create td 1 =========
         let td1 = document.createElement("td");
         let name = document.createElement("div");
         name.className = "name";
@@ -61,20 +61,20 @@ let displaySellerProduct = () => {
 
         td1.append(name)
 
-        // ===== create td 2=====
+        // ========= create td 2=========
         let td2 = document.createElement("td");
         td2.textContent = "$" + all_products[index].price;
 
-        // ======= create td 3 ======
+        // =========== create td 3 ==========
         let td3 = document.createElement("td");
         td3.className = "info";
         td3.textContent = all_products[index].description;
 
-        // ======= create td 4 ======
+        // =========== create td 4 ==========
         let td4 = document.createElement("td");
         let action = document.createElement("div");
         action.classList.add("btn_detail", "card_button", "action");
-        // ====== create action buttons=====
+        // ========== create action buttons =========
         let btn1 = document.createElement("button");
         btn1.type = "button";
         btn1.textContent = "Edit";
@@ -87,25 +87,25 @@ let displaySellerProduct = () => {
         action.append(btn1, btn2);
         td4.appendChild(action);
 
-        // ====== append to tr ====
+        // ========== append to tr ====
         tr.append(td1, td2, td3, td4);
         tbody.appendChild(tr);
     }
     table.appendChild(tbody);
 }
 
-// ========= On Add =====
+// ============= On Add =========
 let onAdd = () => {
     btn_dialog.lastElementChild.textContent = "Add Product";
     show(dialog_container);
 }
-// ======= Cancel function ======
+// =========== Cancel function ==========
 let cancel = () => {
     hide(dialog_container);
     location.reload();
 }
 
-// URL validate from www.freecodecamp.com
+// ====== URL validate from www.freecodecamp.com ====
 const isValidUrl = urlString => {
     try {
         return Boolean(new URL(urlString));
@@ -114,9 +114,8 @@ const isValidUrl = urlString => {
         return false;
     }
 }
-console.log(isValidUrl("fas"))
 
-// ======= Add product =======
+// =========== Add product ===========
 let addProduct = () => {
     let newProduct = {};
     let isTrue=true;
@@ -128,11 +127,11 @@ let addProduct = () => {
     let img_product = document.querySelector("#image");
     let size = document.querySelector("#size");
 
-    // ==== Get value from input =======
+    // ==== Get value from input ===========
     newProduct.url = img_product.value;
     newProduct.title = name_product.value;
     newProduct.currency = currency.value;
-    newProduct.price = checkCurrency(currency.value, price_product.value); 
+    newProduct.price = convertCurrency(currency.value, price_product.value); 
     newProduct.star = 5;
     newProduct.size = size.value;
     newProduct.description = more_info.value;
@@ -170,17 +169,20 @@ let addProduct = () => {
     }
 }
 
-// ====== Check currency =====
-let checkCurrency = (currency, price) => {
-    if(currency==="pound"){
+// ========== Convert currency =========
+let convertCurrency = (currency, price) => {
+    if(currency==="Pound"){
         return price * 1.21;
+    }
+    if(currency==="KHM"){
+        return price / 4000;
     }
     else {
         return price;
     }
 }
 
-// ====== Reset input======
+// ========== Reset input==========
 let resetInput = () => {
     document.querySelector("#name").value = "";
     document.querySelector("#more_info").value="";
@@ -191,9 +193,7 @@ let resetInput = () => {
 }
 
 
-
-
-// ======= Edit product ========
+// =========== Edit product ============
 let edit = (event) => {
     btn_dialog.lastElementChild.textContent = "Edit"
     let index = event.target.parentElement.parentElement.parentElement.dataset.index;
@@ -208,9 +208,7 @@ let edit = (event) => {
     show(dialog_container);
 }
 
-
-
-// ======== Delete product ========
+// ============ Delete product ============
 let deleteProduct = (event) => {
     let index = event.target.parentElement.parentElement.parentElement.dataset.index;
     all_products.splice(index, 1);
@@ -218,7 +216,6 @@ let deleteProduct = (event) => {
     displaySellerProduct();
 }
 
-
-// ======== Call function=======
+// ============ Call function===========
 loadStorge();
 displaySellerProduct();
