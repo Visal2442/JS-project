@@ -85,14 +85,14 @@
                 </div>
                 <div class="credit_number credit">
                     <label for="number">Credit Card Number</label>
-                    <input type="number" id="credit_number" placeholder="0000 - 0000 - 0000 - 0000">
+                    <input type="text" id="credit_number" placeholder="0000 - 0000 - 0000 - 0000">
                 </div>
                 <div class="exp_month credit">
                     <label for="expire">Exp Month / Year</label>
                     <input type="number" name="exp" id="expire" placeholder="00 / 00">
                 </div>
                 <div class="btn_checkout card_button">
-                    <button type="button">Purchase</button>
+                    <button type="button" onclick="checkCreditCard()">Purchase</button>
                 </div>
             </div>
             <i class="fa fa-times" style="font-size: 30px;" onclick="hideCheckOut()"></i>
@@ -120,7 +120,7 @@
             <div class="confirm input">
                 <label for="confirm">Confirm Your Password</label>
                 <input type="password" id="confirm" placeholder="Confirm your password ...">
-            </div>
+            </div>  
             <div class="btn_login input card_button">
                 <button type="button">Create Account</button>
             </div>

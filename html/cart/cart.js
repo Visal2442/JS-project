@@ -140,5 +140,6 @@ let hideLogin=()=>{
 }
 
 
+
 // ======== Call functions ========
 displayCart();
