@@ -374,7 +374,7 @@ let hideLogin=()=>{
 }
 
 // ======= Call Function====== 
-// saveData();
+saveData();
 loadStorge();
 dispalyProduct();
 

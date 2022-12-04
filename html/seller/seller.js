@@ -218,6 +218,5 @@ let deleteProduct = (event) => {
 }
 
 // ============ Call function===========
-saveData();
 loadStorge();
 displaySellerProduct();
