@@ -20,10 +20,6 @@
     font-family: var(--font)
 }
 
-html {
-    height: 100%;
-}
-
 a{
     text-decoration: none;
     color:var(--text-color);

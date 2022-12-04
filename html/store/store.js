@@ -90,7 +90,34 @@ let all_products = [
         url: "../../img/shoe6.png",
         title: "Air Jordan 1 Mid SE",
         price: 2000,
-        currency: "KHM",
+        currency: "USD",
+        star: 5,
+        size: "L",
+        description: "The Homllyer Men's Relaxed Fit Leg jean features the timeless five pocket design for a look that shines at the restaurant, work, or at home among family and friends."
+    },
+    {
+        url: "../../img/shoe7.png",
+        title: "Jordan",
+        price: 800,
+        currency: "USD",
+        star: 5,
+        size: "L",
+        description: "The Homllyer Men's Relaxed Fit Leg jean features the timeless five pocket design for a look that shines at the restaurant, work, or at home among family and friends."
+    },
+    {
+        url: "../../img/shoe9.png",
+        title: "Air Jordan Why Not Zer0",
+        price: 650,
+        currency: "USD",
+        star: 5,
+        size: "L",
+        description: "The Homllyer Men's Relaxed Fit Leg jean features the timeless five pocket design for a look that shines at the restaurant, work, or at home among family and friends."
+    },
+    {
+        url: "../../img/shoe10.png",
+        title: "Air Jordan 5 2Lab5 elephant",
+        price: 500,
+        currency: "USD",
         star: 5,
         size: "L",
         description: "The Homllyer Men's Relaxed Fit Leg jean features the timeless five pocket design for a look that shines at the restaurant, work, or at home among family and friends."
