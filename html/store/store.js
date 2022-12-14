@@ -402,7 +402,7 @@ let hideLogin=()=>{
 
 // ======= Call Function====== 
 // ====== Function save data() need to turn off before we add new product==
-saveData();
+// saveData();
 loadStorge();
 dispalyProduct();
 
